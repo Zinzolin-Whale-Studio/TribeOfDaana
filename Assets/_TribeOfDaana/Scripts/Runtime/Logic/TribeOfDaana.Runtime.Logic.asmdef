@@ -1,0 +1,16 @@
+{
+    "name": "TribeOfDaana.Runtime.Logic",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1a9d94482a180284e964d03f0b8ed104"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
