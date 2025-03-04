@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSystem
 {
-    public class LoadingManager : MonoBehaviour, IGameWideManager
+    public class LoadingManager : Manager<LoadingManager>, IGameWideManager
     {
         private List<LoadSceneComponent> m_loadSceneComponents;
 
@@ -16,7 +16,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSystem
             m_loadSceneComponents = new List<LoadSceneComponent>();
         }
         
-        public bool InitializeManager()
+        public override bool InitializeManager()
         {
             return true;
         }

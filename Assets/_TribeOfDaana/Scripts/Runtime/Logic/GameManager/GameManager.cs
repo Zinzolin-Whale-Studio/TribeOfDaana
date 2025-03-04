@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
 {
-    public class GameManager : MonoBehaviour, IGameWideManager
+    public class GameManager : Manager<GameManager>, IGameWideManager
     {
         [SerializeField] private LoadingManager m_loadingManager;
 
@@ -19,7 +19,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
             if(!InitializeManager()) Debug.LogError("Game Manager failed to initialize");
         }
 
-        public bool InitializeManager()
+        public override bool InitializeManager()
         {
             if (!m_loadingManager.InitializeManager())
             {
