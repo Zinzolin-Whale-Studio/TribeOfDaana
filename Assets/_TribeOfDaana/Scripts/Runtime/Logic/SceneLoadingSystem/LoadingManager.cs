@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSystem
 {
-    public class LoadingManager : MonoBehaviour, IManager
+    public class LoadingManager : MonoBehaviour, IGameWideManager
     {
         private List<LoadSceneComponent> m_loadSceneComponents;
 
@@ -16,7 +16,12 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSystem
             m_loadSceneComponents = new List<LoadSceneComponent>();
         }
         
-        public bool InitializeManager(params IManager[] requiredManagers)
+        public bool InitializeManager()
+        {
+            return true;
+        }
+
+        public bool SynchronizeWithScene()
         {
             m_loadSceneComponents = FindObjectsByType<LoadSceneComponent>(FindObjectsInactive.Include,
                 FindObjectsSortMode.InstanceID).ToList();
@@ -29,6 +34,8 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSystem
             return true;
         }
 
+        #region LoadSceneComponent
+        
         #region Subscribe/Unsubscribe to events
         private void SubscribeToLoadSceneComponentActions(LoadSceneComponent loadSceneComponent)
         {
@@ -52,7 +59,9 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSystem
         
         #endregion
         
-        private void OnDestroy()
+        #endregion
+
+        private void OnDisable()
         {
             foreach (LoadSceneComponent loadSceneComponent in m_loadSceneComponents)
             {
