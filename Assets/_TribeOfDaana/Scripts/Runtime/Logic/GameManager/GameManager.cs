@@ -18,9 +18,11 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
             InitializeManager();
         }
 
-        public void InitializeManager()
+        public bool InitializeManager(params IManager[] requiredManagers)
         {
-            m_loadingManager.InitializeManager();
+            if (!m_loadingManager.InitializeManager()) Debug.LogError("Loading Manager failed to initialize");
+
+            return true;
         }
     }
 }
