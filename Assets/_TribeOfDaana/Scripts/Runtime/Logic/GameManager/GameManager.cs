@@ -1,16 +1,26 @@
+using System;
+using _TribeOfDaana.Scripts.Runtime.Core.Manager;
+using _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSystem;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class GameManager : MonoBehaviour, IManager
     {
-        
-    }
+        [SerializeField] private LoadingManager m_loadingManager;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private GameManager()
+        {
+        }
+
+        void Start()
+        {
+            InitializeManager();
+        }
+
+        public void InitializeManager()
+        {
+            m_loadingManager.InitializeManager();
+        }
     }
 }
