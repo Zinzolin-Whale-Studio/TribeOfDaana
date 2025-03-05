@@ -1,17 +1,16 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using _TribeOfDaana.Scripts.Runtime.Core.Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSystem
+namespace _TribeOfDaana.Scripts.Runtime.Logic.GameSubsystems.SceneLoadingSubsystem
 {
-    public class LoadingManager : Manager<LoadingManager>, IGameWideManager
+    public class LoadingSubsystemManager : Manager<LoadingSubsystemManager>, IGameSubsystemManager
     {
         private List<LoadSceneComponent> m_loadSceneComponents;
 
-        private LoadingManager()
+        private LoadingSubsystemManager()
         {
             m_loadSceneComponents = new List<LoadSceneComponent>();
         }

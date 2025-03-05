@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4524837306518773418}
   - component: {fileID: 554476098719805585}
   m_Layer: 0
-  m_Name: ---GameWideManagers---
+  m_Name: ---GameSystemManagers---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,6 +56,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2293683715400816463, guid: 7f1af6654d145274d93e51277d9a17d0, type: 3}
       propertyPath: m_loadingManager
+      value: 
+      objectReference: {fileID: 8265482619469094908}
+    - target: {fileID: 2293683715400816463, guid: 7f1af6654d145274d93e51277d9a17d0, type: 3}
+      propertyPath: m_loadingSubsystemManager
       value: 
       objectReference: {fileID: 8265482619469094908}
     - target: {fileID: 6238393091648891820, guid: 7f1af6654d145274d93e51277d9a17d0, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Core.Manager
 {
-    public abstract class Manager<T> : MonoBehaviourSingleton<T>, IManager where T : Manager<T>
+    public abstract class Manager<T> : MonoBehaviourSingleton<Manager<T>>, IManager
     {
         public abstract bool InitializeManager();
     }

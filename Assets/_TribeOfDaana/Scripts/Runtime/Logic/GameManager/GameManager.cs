@@ -1,14 +1,16 @@
-using System;
+using System.Collections.Generic;
+using System.Linq;
 using _TribeOfDaana.Scripts.Runtime.Core.Manager;
-using _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSystem;
+using _TribeOfDaana.Scripts.Runtime.Logic.GameSubsystems.SceneLoadingSubsystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
 {
-    public class GameManager : Manager<GameManager>, IGameWideManager
+    public class GameManager : Manager<GameManager>
     {
-        [SerializeField] private LoadingManager m_loadingManager;
+        [SerializeField] private LoadingSubsystemManager m_loadingSubsystemManager;
 
         private GameManager()
         {
@@ -21,13 +23,13 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
 
         public override bool InitializeManager()
         {
-            if (!m_loadingManager.InitializeManager())
+            if (!m_loadingSubsystemManager.InitializeManager())
             {
                 Debug.LogError("Loading Manager failed to initialize");
                 return false;
             }
 
-            if(!SynchronizeWithScene())
+            if(!SynchronizeSubsystemsWithScene())
             {
                 Debug.LogError("Game Manager failed to synchronize with scene");
                 return false;
@@ -38,16 +40,9 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
             return true;
         }
 
-        #region IGameWideManager
-
-        public void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+        private bool SynchronizeSubsystemsWithScene()
         {
-            if(!SynchronizeWithScene()) Debug.LogError("Game Manager failed to synchronize with scene");
-        }
-
-        public bool SynchronizeWithScene()
-        {
-            if (!m_loadingManager.SynchronizeWithScene())
+            if (!m_loadingSubsystemManager.SynchronizeWithScene())
             {
                 Debug.LogError("Loading Manager failed to synchronize with scene");
                 return false;
@@ -56,10 +51,32 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
             return true;
         }
 
-        #endregion
+        private bool FindSceneSystemManager(out ISceneSystemManager foundSceneSystemManager)
+        {
+            foundSceneSystemManager = null;
+            
+            IEnumerable<ISceneSystemManager> sceneSystemManagers = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.InstanceID).OfType<ISceneSystemManager>();
+
+            if (!sceneSystemManagers.Any()) return false;
+
+            foundSceneSystemManager = sceneSystemManagers.First();
+            
+            return foundSceneSystemManager != null;
+        }
         
-        
-        #region SceneManager
+        #region React to SceneManager events
+        private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+        {
+            if(!SynchronizeSubsystemsWithScene()) Debug.LogError("Game Manager failed to synchronize with scene");
+
+            if (!FindSceneSystemManager(out ISceneSystemManager foundSceneSystemManager))
+            {
+                Debug.LogError("Game Manager failed to find Scene System Manager");
+                return;
+            }
+
+            if(!foundSceneSystemManager.InitializeManager()) Debug.LogError("Game Manager failed to initialize Scene System Manager");;
+        }
 
         private void SubscribeToSceneManagerEvents()
         {
