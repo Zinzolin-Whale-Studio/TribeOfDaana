@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Core.Singleton
@@ -26,8 +25,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.Singleton
         } 
     }
 
-    public abstract class PersistentMonoBehaviourSingleton<T> : MonoBehaviourSingleton<T>
-        where T : PersistentMonoBehaviourSingleton<T>
+    public abstract class PersistentMonoBehaviourSingleton<T> : MonoBehaviourSingleton<PersistentMonoBehaviourSingleton<T>>
     {
         protected override void Awake()
         {

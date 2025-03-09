@@ -4,7 +4,6 @@ using _TribeOfDaana.Scripts.Runtime.Core.Manager;
 using _TribeOfDaana.Scripts.Runtime.Logic.GameSubsystems.SceneLoadingSubsystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
 {
