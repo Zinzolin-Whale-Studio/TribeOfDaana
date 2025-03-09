@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.BattleSystem
 {
-    public class BattleSystemManager : SceneSystemManager<BattleSystemManager>
+    public class BattleSceneSystemManager : SceneSystemManager<BattleSceneSystemManager>
     {
         public override bool InitializeManager()
         {

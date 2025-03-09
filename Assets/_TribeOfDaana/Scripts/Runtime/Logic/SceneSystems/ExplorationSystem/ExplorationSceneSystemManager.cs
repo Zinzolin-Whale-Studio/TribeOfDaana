@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem
 {
-    public class ExplorationSystemManager : SceneSystemManager<ExplorationSystemManager>
+    public class ExplorationSceneSystemManager : SceneSystemManager<ExplorationSceneSystemManager>
     {
         public override bool InitializeManager()
         {
