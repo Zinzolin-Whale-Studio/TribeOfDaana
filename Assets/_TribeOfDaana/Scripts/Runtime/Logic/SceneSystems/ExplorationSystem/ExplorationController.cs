@@ -23,10 +23,23 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem
         /// <summary>
         /// React to any change of state in the <see cref="_walk"/> action
         /// </summary>
-        /// <param name="obj">Callback context</param>
+        /// <param name="ctx">Callback context</param>
         private void OnWalkActionTriggered(InputAction.CallbackContext ctx)
         {
-            
+            if (ctx.started)
+            {
+                
+            }
+
+            if (ctx.performed)
+            {
+                
+            }
+
+            if (ctx.canceled)
+            {
+                
+            }
         }
 
         private void OnDisable()
