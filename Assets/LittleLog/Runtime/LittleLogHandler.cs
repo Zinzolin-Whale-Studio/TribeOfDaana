@@ -4,16 +4,15 @@ using Object = UnityEngine.Object;
 
 namespace LittleLog.Runtime
 {
-    public class LittleLogHandler : MonoBehaviour, ILogHandler
+    internal sealed class LittleLogHandler : ILogHandler
     {
-        public void LogFormat(LogType logType, Object context, string format, params object[] args)
-        {
-            throw new NotImplementedException();
-        }
-
         public void LogException(Exception exception, Object context)
         {
-            throw new NotImplementedException();
+        }
+        
+        public void LogFormat(LogType logType, Object context, string format, params object[] args)
+        {
+            LittleLogDatabase.Instance.AddLogEntry();
         }
     }
 }
