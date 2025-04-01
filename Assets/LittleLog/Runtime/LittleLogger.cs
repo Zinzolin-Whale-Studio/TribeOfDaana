@@ -8,9 +8,7 @@ namespace LittleLog.Runtime
     {
         public LittleLogger(ILogHandler inLogHandler) : base(inLogHandler)
         {
-            logHandler = inLogHandler;
-            logEnabled = true;
-            filterLogType = LogType.Log;
+            
         }
     }
 }

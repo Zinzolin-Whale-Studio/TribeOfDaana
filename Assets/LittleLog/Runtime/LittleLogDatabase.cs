@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using log4net;
@@ -7,8 +8,17 @@ using UnityEngine;
 
 namespace LittleLog.Runtime
 {
-    internal class LittleLogDatabase : ScriptableObject
+    public class LittleLogDatabase : ScriptableObject
     {
+        #region Fields
+        private List<LittleLogEntry> _logEntries = new List<LittleLogEntry>();
+        #endregion
+        
+        #region Actions
+
+        public event Action<LittleLogEntry> EntryAdded;
+        #endregion
+        
         #region Singleton Instance
         private const string AssetName = nameof(LittleLogDatabase) + ".asset";
         
@@ -59,9 +69,11 @@ namespace LittleLog.Runtime
         }
         #endregion
 
-        public void AddLogEntry()
+        public void AddLogEntry(string text)
         {
-            Debug.Log("Add entry");
+            LittleLogEntry entry = new LittleLogEntry(text);
+            _logEntries.Add(entry);
+            EntryAdded?.Invoke(entry);
         }
 
         private void OnDestroy()

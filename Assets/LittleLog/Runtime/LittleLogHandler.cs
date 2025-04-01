@@ -12,7 +12,7 @@ namespace LittleLog.Runtime
         
         public void LogFormat(LogType logType, Object context, string format, params object[] args)
         {
-            LittleLogDatabase.Instance.AddLogEntry();
+            LittleLogDatabase.Instance.AddLogEntry(args[0].ToString());
         }
     }
 }

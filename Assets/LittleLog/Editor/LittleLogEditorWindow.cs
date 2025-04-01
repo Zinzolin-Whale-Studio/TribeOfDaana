@@ -2,10 +2,10 @@ using System;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace LittleLog.Editor
 {
+    using Runtime;
     public class LittleLogEditorWindow : EditorWindow
     {
         [MenuItem("Tools/Little Log Console")]
@@ -25,7 +25,34 @@ namespace LittleLog.Editor
             window.titleContent = new GUIContent("Little Log Console");
         }
 
+        private void OnEnable()
+        {
+            InitializeWindow();
+        }
+
+        private void InitializeWindow()
+        {
+            LittleLogDatabase.Instance.EntryAdded += OnEntryAdded;
+        }
+        
         private void CreateGUI()
+        {
+        }
+
+        #region React to LittleLogDatabase events
+
+        private void OnEntryAdded(LittleLogEntry entry)
+        {
+            LittleLogEditorEntry editorEntry = new LittleLogEditorEntry(entry.Text);
+            rootVisualElement.Add(editorEntry);
+        }
+
+        #endregion
+        
+
+        
+
+        private void OnDisable()
         {
             
         }
