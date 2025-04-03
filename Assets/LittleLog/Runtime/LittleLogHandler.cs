@@ -6,13 +6,17 @@ namespace LittleLog.Runtime
 {
     internal sealed class LittleLogHandler : ILogHandler
     {
+        private readonly LittleLogManager _littleLogManager = new();
+
         public void LogException(Exception exception, Object context)
         {
         }
         
         public void LogFormat(LogType logType, Object context, string format, params object[] args)
         {
-            LittleLogDatabase.Instance.AddLogEntry(args[0].ToString());
+            string log = $"[{DateTime.UtcNow:HH:mm:ss}] {args[0]}";
+
+            _littleLogManager.AddConsoleEntry(new LittleLogEntry(logType, log));
         }
     }
 }
