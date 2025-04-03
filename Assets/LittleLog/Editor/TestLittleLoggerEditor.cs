@@ -1,5 +1,6 @@
 using LittleLog.Runtime;
 using UnityEditor;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace LittleLog.Editor
@@ -17,14 +18,33 @@ namespace LittleLog.Editor
             
             Button logButton = new Button((() =>
             {
-                Runtime.LittleLog.Log("Test Log");
+                Runtime.LittleLog.Log("Test Message");
             }))
             {
-                text = "Log"
+                text = "Log Message"
             };
             
             editorRoot.Add(logButton);
 
+            Button warningButton = new Button((() =>
+            {
+                Runtime.LittleLog.LogWarning("Test Warning");
+            }))
+            {
+                text = "Log Warning"
+            };
+            
+            editorRoot.Add(warningButton);
+            
+            Button errorButton = new Button((() =>
+            {
+                Runtime.LittleLog.LogError("Test Error");
+            }))
+            {
+                text = "Log Error"
+            };
+            
+            editorRoot.Add(errorButton);
             return editorRoot;
         }
     }

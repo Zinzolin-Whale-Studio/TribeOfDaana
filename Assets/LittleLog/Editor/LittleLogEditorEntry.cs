@@ -20,16 +20,16 @@ namespace LittleLog.Editor
             switch (entry.LogType)
             {
                 case LogType.Log:
-                    texture = Resources.Load<Texture2D>(LittleLogEditorResources.MessageIconPath);
+                    texture = LittleLogEditorResources.MessageIcon;
                     break;
                 case LogType.Warning:
-                    texture = Resources.Load<Texture2D>(LittleLogEditorResources.WarningIconPath);
+                    texture = LittleLogEditorResources.WarningIcon;
                     break;
                 case LogType.Error:
-                    texture = Resources.Load<Texture2D>(LittleLogEditorResources.ErrorIconPath);
+                    texture = LittleLogEditorResources.ErrorIcon;
                     break;
                 default:
-                    texture = Resources.Load<Texture2D>(LittleLogEditorResources.MessageIconPath);
+                    texture = LittleLogEditorResources.MessageIcon;
                     break;
             }
 
