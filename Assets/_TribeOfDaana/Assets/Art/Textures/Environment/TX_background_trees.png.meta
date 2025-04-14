@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TX_background_trees_0: -5539583147242048560
+      TX_background_trees_1: 6568331535886061465
+      TX_background_trees_2: 8153871242037025286
+      TX_background_trees_3: 2415377650139606632
+      TX_background_trees_4: 6478084044677264763
+      TX_background_trees_5: 344083959767170988
+      TX_background_trees_6: 3192478666259760733
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

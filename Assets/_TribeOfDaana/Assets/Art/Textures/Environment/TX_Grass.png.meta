@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: faf0b101c38d6c94e9f4d9287be1e2ba
+guid: 9e95bb3ade0f3bf4eba9c8f900432fd3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9108328104070914968
-    second: TX_Fog_0
+      213: 6670327774735177607
+    second: TX_Grass_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 196, y: 0, z: 196, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TX_Fog_0
+      name: TX_Grass_0
       rect:
         serializedVersion: 2
-        x: 211
+        x: 208
         y: 0
-        width: 1555
+        width: 1470
         height: 1080
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 893aad41728476e70800000000000000
-      internalID: 9108328104070914968
+      spriteID: 787138c25c3c19c50800000000000000
+      internalID: 6670327774735177607
       vertices: []
       indices: 
       edges: []
@@ -138,8 +138,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TX_Fog_0: 9108328104070914968
+      TX_Grass_0: 6670327774735177607
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
