@@ -100,10 +100,9 @@ namespace LittleLog.Editor
                 }
             };
             
-            
             _entriesContainer.Add(editorEntry);
             _isNextEntryEven = !_isNextEntryEven;
-            Debug.Log(_isNextEntryEven);
+            // Debug.Log(_isNextEntryEven);
         }
 
         private void DrawAllEntries()

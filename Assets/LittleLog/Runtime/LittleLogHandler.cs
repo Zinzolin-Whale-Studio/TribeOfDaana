@@ -14,8 +14,12 @@ namespace LittleLog.Runtime
         
         public void LogFormat(LogType logType, Object context, string format, params object[] args)
         {
-            string log = $"[{DateTime.UtcNow:HH:mm:ss}] {args[0]}";
+            string log = $"[{DateTime.UtcNow:HH:mm:ss}]";
 
+            foreach (object o in args)
+            {
+                log += $" {o}";
+            }
             _littleLogManager.AddConsoleEntry(new LittleLogEntry(logType, log));
         }
     }
