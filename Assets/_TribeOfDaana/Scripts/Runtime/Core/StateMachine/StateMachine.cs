@@ -4,12 +4,13 @@ using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
 {
-    public class StateMachine : MonoBehaviour
+    public class StateMachine<TStateEnum> : MonoBehaviour where TStateEnum : Enum
     {
         #region Fields
 
-        [SerializeField] private List<State> _states;
-        private State _currentState;
+        [SerializeReference] private List<Type> _stateTypesToInstantiate; 
+        private List<State<TStateEnum>> _states;
+        private State<TStateEnum> _currentState;
         #endregion
 
         #region MonoBehaviour
@@ -26,26 +27,24 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
 
         #endregion
         
-        public void InitStateMachine()
+        public virtual void InitStateMachine()
         {
             InitStates();
-            
-            ChangeState(StateID.Idle);
         }
 
         private void InitStates()
         {
-            foreach (State state in _states)
+            foreach (State<TStateEnum> state in _states)
             {
                 state.InitState();
             }
         }
 
-        private void ChangeState(StateID nextStateID)
+        private void ChangeState(TStateEnum nextStateID)
         {
-            if(_currentState != null && nextStateID == _currentState.GetStateID()) return;
+            if(_currentState != null && nextStateID.Equals(_currentState.GetStateID())) return;
 
-            State nextState = GetState(nextStateID);
+            State<TStateEnum> nextState = GetState(nextStateID);
             if(nextState == null) return;
 
             if (_currentState != null)
@@ -58,11 +57,11 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
             _currentState.StateEnter();
         }
 
-        private State GetState(StateID stateID)
+        private State<TStateEnum> GetState(TStateEnum stateID)
         {
-            foreach (State state in _states)
+            foreach (State<TStateEnum> state in _states)
             {
-                if(state.GetStateID() == stateID) return state;
+                if(state.GetStateID().Equals(stateID)) return state;
             }
             
             return null;

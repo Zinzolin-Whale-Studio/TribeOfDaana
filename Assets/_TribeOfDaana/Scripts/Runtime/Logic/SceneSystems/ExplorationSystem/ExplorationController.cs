@@ -1,5 +1,3 @@
-using System;
-using _TribeOfDaana.Scripts.Runtime.Logic.SceneSubsystems.MovementSubsystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,8 +7,6 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem
     {
         #region Fields
         [SerializeField] private InputActionReference _walkInputAction;
-
-        [SerializeField] private Walk _walk;
         #endregion
 
         private void OnEnable()

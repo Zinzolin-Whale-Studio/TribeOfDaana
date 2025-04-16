@@ -1,12 +1,14 @@
+using System;
 using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
 {
-    public abstract class State : MonoBehaviour
+    [Serializable]
+    public abstract class State<TStateEnum> where TStateEnum : Enum
     {
         public abstract void InitState();
 
-        public abstract StateID GetStateID();
+        public abstract TStateEnum GetStateID();
 
         public abstract void StateEnter();
 
