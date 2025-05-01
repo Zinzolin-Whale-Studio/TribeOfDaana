@@ -428,7 +428,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stateTypesToInstantiate:
-  - _typeName: 
+  - _typeName: _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.StateMachines.ExplorationPlayerStates.ExplorationStateIdle,
+      TribeOfDaana.Runtime.Logic, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - _typeName: _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.StateMachines.ExplorationPlayerStates.ExplorationStateWalk,
+      TribeOfDaana.Runtime.Logic, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - _typeName: _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.StateMachines.ExplorationPlayerStates.ExplorationStateIdle,
+      TribeOfDaana.Runtime.Logic, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - _typeName: _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.StateMachines.ExplorationPlayerStates.ExplorationStateWalk,
+      TribeOfDaana.Runtime.Logic, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  r:
+    _typeName: _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.StateMachines.ExplorationPlayerStates.ExplorationStateIdle,
+      TribeOfDaana.Runtime.Logic, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &453195683
 GameObject:
   m_ObjectHideFlags: 0
