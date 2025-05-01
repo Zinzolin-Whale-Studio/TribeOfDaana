@@ -1,0 +1,32 @@
+using _TribeOfDaana.Scripts.Runtime.Core.StateMachine;
+using UnityEngine;
+
+namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.StateMachines.ExplorationPlayerStates
+{
+    public class ExplorationStateWalk : State<ExplorationStateID>
+    {
+        public override void InitState()
+        {
+        }
+    
+        public override ExplorationStateID GetStateID()
+        {
+            return ExplorationStateID.Walk;
+        }
+    
+        public override void StateEnter()
+        {
+            Debug.LogWarning("Idle Enter");
+        }
+    
+        public override void StateUpdate(float deltaTime)
+        {
+            Debug.LogWarning("Idle Update");
+        }
+    
+        public override void StateExit()
+        {
+            Debug.LogWarning("Idle Exit");
+        }
+    }
+}

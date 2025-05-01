@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using _TribeOfDaana.Scripts.Runtime.Core.System;
 using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
@@ -8,7 +9,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
     {
         #region Fields
 
-        [SerializeReference] private List<Type> _stateTypesToInstantiate; 
+        [SerializeField] private List<SubTypeReference<State<TStateEnum>>> _stateTypesToInstantiate;
         private List<State<TStateEnum>> _states;
         private State<TStateEnum> _currentState;
         #endregion
