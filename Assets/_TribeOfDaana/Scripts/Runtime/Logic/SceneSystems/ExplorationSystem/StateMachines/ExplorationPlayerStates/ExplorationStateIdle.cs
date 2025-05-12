@@ -3,12 +3,15 @@ using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.StateMachines.ExplorationPlayerStates
 {
-    public class ExplorationStateIdle : State<ExplorationStateID>
+    public class ExplorationStateIdle : State<ExplorationStateID, ExplorationController>
     {
-        public override void InitState()
+        public override void InitState(ExplorationController stateMachineController)
         {
+            stateMachineController.WalkStarted += OnWalkStarted;
         }
-    
+
+        #region State Implementation
+
         public override ExplorationStateID GetStateID()
         {
             return ExplorationStateID.Idle;
@@ -28,5 +31,16 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.Sta
         {
             Debug.LogWarning("Idle Exit");
         }
+
+        #endregion
+
+        #region React to controller events
+        private void OnWalkStarted()
+        {
+            StateChangeAsked?.Invoke(ExplorationStateID.Walk);
+        }
+        #endregion
+        
+        
     }
 }

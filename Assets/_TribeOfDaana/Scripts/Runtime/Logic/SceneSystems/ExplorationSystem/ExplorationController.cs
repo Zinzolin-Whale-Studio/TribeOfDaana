@@ -1,14 +1,24 @@
+using _TribeOfDaana.Scripts.Runtime.Core.StateMachine;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem
 {
-    public class ExplorationController : MonoBehaviour
+    public class ExplorationController : StateMachineController
     {
         #region Fields
         [SerializeField] private InputActionReference _walkInputAction;
-        #endregion
 
+        public UnityAction WalkStarted;
+        public UnityAction WalkEnded;
+        #endregion
+        
+        public override void InitializeController()
+        {
+            
+        }
+        
         private void OnEnable()
         {
             _walkInputAction.action.started += OnWalkActionTriggered;
@@ -24,7 +34,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem
         {
             if (ctx.started)
             {
-                
+                WalkStarted?.Invoke();
             }
 
             if (ctx.performed)
@@ -34,7 +44,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem
 
             if (ctx.canceled)
             {
-                
+                WalkEnded?.Invoke();
             }
         }
 

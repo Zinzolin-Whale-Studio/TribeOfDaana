@@ -5,20 +5,22 @@ using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
 {
-    public class StateMachine<TStateEnum> : MonoBehaviour where TStateEnum : Enum
+    public abstract class StateMachine<TStateEnum, TController> : MonoBehaviour where TStateEnum : Enum where TController : StateMachineController
     {
         #region Fields
 
-        [SerializeField] private List<SubTypeReference<State<TStateEnum>>> _stateTypesToInstantiate;
-        private List<State<TStateEnum>> _states;
-        private State<TStateEnum> _currentState;
+        [SerializeField] private List<SubTypeReference<State<TStateEnum, TController>>> _stateTypesToInstantiate;
+        private List<State<TStateEnum, TController>> _states;
+        private State<TStateEnum, TController> _currentState;
+
+        [SerializeField] private TController _stateMachineController;
         #endregion
 
         #region MonoBehaviour
 
         private void Start()
         {
-            InitStateMachine();
+            StartStateMachine();
         }
 
         private void FixedUpdate()
@@ -30,22 +32,60 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
         
         public virtual void InitStateMachine()
         {
-            InitStates();
+            _stateMachineController.InitializeController();
+            
+            CreateStates();
+            InitStates(_stateMachineController);
+            RegisterToStateEvents();
         }
 
-        private void InitStates()
+        private void CreateStates()
         {
-            foreach (State<TStateEnum> state in _states)
+            _states = new List<State<TStateEnum, TController>>();
+
+            List<Type> createdTypes = new List<Type>();
+            
+            foreach (SubTypeReference<State<TStateEnum, TController>> stateTypeReference in _stateTypesToInstantiate)
             {
-                state.InitState();
+                Type stateType = stateTypeReference.Type;
+                
+                if(createdTypes.Contains(stateType)) continue;
+                
+                createdTypes.Add(stateType);
+               
+                State<TStateEnum, TController> state = (State<TStateEnum, TController>)Activator.CreateInstance(stateType);
+                _states.Add(state);
             }
         }
 
+        private void InitStates(TController stateMachineController)
+        {
+            foreach (State<TStateEnum, TController> state in _states)
+            {
+                state.InitState(stateMachineController);
+            }
+        }
+
+        private void RegisterToStateEvents()
+        {
+            foreach (State<TStateEnum, TController> state in _states)
+            {
+                state.StateChangeAsked += OnStateChangeAsked;
+            }
+        }
+
+        public void StartStateMachine()
+        {
+            if(_states.Count <= 0) return;
+            
+            ChangeState(_states[0].GetStateID());
+        }
+        
         private void ChangeState(TStateEnum nextStateID)
         {
             if(_currentState != null && nextStateID.Equals(_currentState.GetStateID())) return;
 
-            State<TStateEnum> nextState = GetState(nextStateID);
+            State<TStateEnum, TController> nextState = GetState(nextStateID);
             if(nextState == null) return;
 
             if (_currentState != null)
@@ -58,9 +98,14 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
             _currentState.StateEnter();
         }
 
-        private State<TStateEnum> GetState(TStateEnum stateID)
+        private void OnStateChangeAsked(TStateEnum nextStateID)
         {
-            foreach (State<TStateEnum> state in _states)
+            ChangeState(nextStateID);
+        }
+        
+        private State<TStateEnum, TController> GetState(TStateEnum stateID)
+        {
+            foreach (State<TStateEnum, TController> state in _states)
             {
                 if(state.GetStateID().Equals(stateID)) return state;
             }
