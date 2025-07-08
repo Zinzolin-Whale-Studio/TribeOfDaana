@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
 {
-    public abstract class StateMachine<TStateEnum, TController> : MonoBehaviour where TStateEnum : Enum where TController : StateMachineController
+    public abstract class StateMachine<TState, TStateEnum, TController> : MonoBehaviour where TState : State<TStateEnum, TController> where TStateEnum : Enum  where TController : StateMachineController 
     {
         #region Fields
 
         [SerializeField] private List<SubTypeReference<State<TStateEnum, TController>>> _stateTypesToInstantiate;
-        private List<State<TStateEnum, TController>> _states;
+        private List<TState> _states;
         private State<TStateEnum, TController> _currentState;
 
         [SerializeField] private TController _stateMachineController;
@@ -41,7 +41,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
 
         private void CreateStates()
         {
-            _states = new List<State<TStateEnum, TController>>();
+            _states = new List<TState>();
 
             List<Type> createdTypes = new List<Type>();
             
@@ -53,12 +53,12 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
                 
                 createdTypes.Add(stateType);
                
-                State<TStateEnum, TController> state = (State<TStateEnum, TController>)Activator.CreateInstance(stateType);
+                TState state = (TState)Activator.CreateInstance(stateType);
                 _states.Add(state);
             }
         }
 
-        private void InitStates(TController stateMachineController)
+        protected virtual void InitStates(TController stateMachineController)
         {
             foreach (State<TStateEnum, TController> state in _states)
             {

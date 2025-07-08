@@ -5,6 +5,9 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.Sta
 {
     public abstract class ExplorationStateBase : State<ExplorationStateID, ExplorationController>
     {
-        
+        public void InitExplorationState(Rigidbody2D rb)
+        {
+            
+        }
     }
 }
