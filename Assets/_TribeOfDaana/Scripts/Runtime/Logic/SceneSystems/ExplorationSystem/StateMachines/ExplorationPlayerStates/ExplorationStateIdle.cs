@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.StateMachines.ExplorationPlayerStates
 {
-    public class ExplorationStateIdle : State<ExplorationStateID, ExplorationController>
+    public class ExplorationStateIdle : ExplorationStateBase
     {
         public override void InitState(ExplorationController stateMachineController)
         {

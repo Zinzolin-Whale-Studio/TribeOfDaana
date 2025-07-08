@@ -109,7 +109,7 @@ namespace _TribeOfDaana.Scripts.Editor.Core.System
                 Type[] types = assembly.GetTypes();
                 foreach (Type type in types)
                 {
-                    if (type.IsSubclassOf(parentType))
+                    if (type.IsSubclassOf(parentType) && !type.IsAbstract)
                     {
                         _cachedTypes.Add(type);
                     }
