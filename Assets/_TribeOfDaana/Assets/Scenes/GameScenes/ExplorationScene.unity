@@ -371,6 +371,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 623785890}
     m_Modifications:
+    - target: {fileID: 5077281974292615404, guid: fe7ae669f9e9d5e449da8601aece084a, type: 3}
+      propertyPath: _playerRigidBody
+      value: 
+      objectReference: {fileID: 446481977}
+    - target: {fileID: 5077281974292615404, guid: fe7ae669f9e9d5e449da8601aece084a, type: 3}
+      propertyPath: _explorationPlayerDataSO
+      value: 
+      objectReference: {fileID: 11400000, guid: a81e156668cfffa46afbc083edc5e19f, type: 2}
     - target: {fileID: 6260069047345761728, guid: fe7ae669f9e9d5e449da8601aece084a, type: 3}
       propertyPath: m_Name
       value: ExplorationPlayer
@@ -423,6 +431,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 799223372}
   m_SourcePrefab: {fileID: 100100000, guid: fe7ae669f9e9d5e449da8601aece084a, type: 3}
+--- !u!50 &446481977 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 400834797392008516, guid: fe7ae669f9e9d5e449da8601aece084a, type: 3}
+  m_PrefabInstance: {fileID: 446481976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &446481978 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5077281974292615404, guid: fe7ae669f9e9d5e449da8601aece084a, type: 3}

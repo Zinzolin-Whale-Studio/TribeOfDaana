@@ -19,17 +19,18 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.Sta
     
         public override void StateEnter()
         {
-            Debug.LogWarning("Idle Enter");
+            // Debug.LogWarning("Idle Enter");
+            _movedRb.linearVelocity = Vector2.zero;
         }
     
         public override void StateUpdate(float deltaTime)
         {
-            Debug.LogWarning("Idle Update");
+            // Debug.LogWarning("Idle Update");
         }
     
         public override void StateExit()
         {
-            Debug.LogWarning("Idle Exit");
+            // Debug.LogWarning("Idle Exit");
         }
 
         #endregion

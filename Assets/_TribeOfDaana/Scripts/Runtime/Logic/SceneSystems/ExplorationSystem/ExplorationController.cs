@@ -11,6 +11,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem
         [SerializeField] private InputActionReference _walkInputAction;
 
         public UnityAction WalkStarted;
+        public UnityAction<Vector2> WalkPerformed;
         public UnityAction WalkEnded;
         #endregion
         
@@ -39,7 +40,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem
 
             if (ctx.performed)
             {
-                
+                WalkPerformed?.Invoke(ctx.ReadValue<Vector2>());
             }
 
             if (ctx.canceled)

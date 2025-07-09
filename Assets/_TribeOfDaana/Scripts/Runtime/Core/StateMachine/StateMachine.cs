@@ -10,7 +10,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
         #region Fields
 
         [SerializeField] private List<SubTypeReference<State<TStateEnum, TController>>> _stateTypesToInstantiate;
-        private List<TState> _states;
+        protected List<TState> _states;
         private State<TStateEnum, TController> _currentState;
 
         [SerializeField] private TController _stateMachineController;
