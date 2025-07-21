@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5046564663928383560}
-  - component: {fileID: 9018673831542036484}
-  - component: {fileID: 3655391734890128334}
+  - component: {fileID: 5077281974292615404}
+  - component: {fileID: 6000692407420113103}
   m_Layer: 0
   m_Name: Behaviours
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6448822651410182946}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9018673831542036484
+--- !u!114 &5077281974292615404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,10 +42,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2920532121269122068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7b57461e006314a9b1b5dd0597f1d9, type: 3}
+  m_Script: {fileID: 11500000, guid: d113bc2ac6fc32449b849a5e695e3212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3655391734890128334
+  _stateTypesToInstantiate:
+  - _typeName: _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.StateMachines.ExplorationPlayerStates.ExplorationStateIdle,
+      TribeOfDaana.Runtime.Logic, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - _typeName: _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.ExplorationSystem.StateMachines.ExplorationPlayerStates.ExplorationStateWalk,
+      TribeOfDaana.Runtime.Logic, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  _stateMachineController: {fileID: 6000692407420113103}
+--- !u!114 &6000692407420113103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,9 +60,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2920532121269122068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc586df9b517d50469de2694f4600759, type: 3}
+  m_Script: {fileID: 11500000, guid: f9287ffdf8491ec46976c0c9ce8ed1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _walkInputAction: {fileID: 7514482770362939842, guid: 1db6eedd52c954a41ab33f92d972d4e5, type: 3}
 --- !u!1 &4631266252011737185
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +181,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6448822651410182946}
   - component: {fileID: 400834797392008516}
-  - component: {fileID: 94743072847208958}
   m_Layer: 0
   m_Name: ExplorationPlayer
   m_TagString: Untagged
@@ -227,20 +233,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &94743072847208958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6260069047345761728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9287ffdf8491ec46976c0c9ce8ed1c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _walkInputAction: {fileID: 7514482770362939842, guid: 1db6eedd52c954a41ab33f92d972d4e5, type: 3}
-  _walk: {fileID: 9018673831542036484}
 --- !u!1 &6978876119393963107
 GameObject:
   m_ObjectHideFlags: 0

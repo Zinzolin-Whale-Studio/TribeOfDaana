@@ -1,22 +1,26 @@
 using System;
 using System.Collections.Generic;
+using _TribeOfDaana.Scripts.Runtime.Core.System;
 using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
 {
-    public class StateMachine : MonoBehaviour
+    public abstract class StateMachine<TState, TStateEnum, TController> : MonoBehaviour where TState : State<TStateEnum, TController> where TStateEnum : Enum  where TController : StateMachineController 
     {
         #region Fields
 
-        [SerializeField] private List<State> _states;
-        private State _currentState;
+        [SerializeField] private List<SubTypeReference<State<TStateEnum, TController>>> _stateTypesToInstantiate;
+        protected List<TState> _states;
+        private State<TStateEnum, TController> _currentState;
+
+        [SerializeField] private TController _stateMachineController;
         #endregion
 
         #region MonoBehaviour
 
         private void Start()
         {
-            InitStateMachine();
+            StartStateMachine();
         }
 
         private void FixedUpdate()
@@ -26,26 +30,62 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
 
         #endregion
         
-        public void InitStateMachine()
+        public virtual void InitStateMachine()
         {
-            InitStates();
+            _stateMachineController.InitializeController();
             
-            ChangeState(StateID.Idle);
+            CreateStates();
+            InitStates(_stateMachineController);
+            RegisterToStateEvents();
         }
 
-        private void InitStates()
+        private void CreateStates()
         {
-            foreach (State state in _states)
+            _states = new List<TState>();
+
+            List<Type> createdTypes = new List<Type>();
+            
+            foreach (SubTypeReference<State<TStateEnum, TController>> stateTypeReference in _stateTypesToInstantiate)
             {
-                state.InitState();
+                Type stateType = stateTypeReference.Type;
+                
+                if(createdTypes.Contains(stateType)) continue;
+                
+                createdTypes.Add(stateType);
+               
+                TState state = (TState)Activator.CreateInstance(stateType);
+                _states.Add(state);
             }
         }
 
-        private void ChangeState(StateID nextStateID)
+        protected virtual void InitStates(TController stateMachineController)
         {
-            if(_currentState != null && nextStateID == _currentState.GetStateID()) return;
+            foreach (State<TStateEnum, TController> state in _states)
+            {
+                state.InitState(stateMachineController);
+            }
+        }
 
-            State nextState = GetState(nextStateID);
+        private void RegisterToStateEvents()
+        {
+            foreach (State<TStateEnum, TController> state in _states)
+            {
+                state.StateChangeAsked += OnStateChangeAsked;
+            }
+        }
+
+        public void StartStateMachine()
+        {
+            if(_states.Count <= 0) return;
+            
+            ChangeState(_states[0].GetStateID());
+        }
+        
+        private void ChangeState(TStateEnum nextStateID)
+        {
+            if(_currentState != null && nextStateID.Equals(_currentState.GetStateID())) return;
+
+            State<TStateEnum, TController> nextState = GetState(nextStateID);
             if(nextState == null) return;
 
             if (_currentState != null)
@@ -58,11 +98,16 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.StateMachine
             _currentState.StateEnter();
         }
 
-        private State GetState(StateID stateID)
+        private void OnStateChangeAsked(TStateEnum nextStateID)
         {
-            foreach (State state in _states)
+            ChangeState(nextStateID);
+        }
+        
+        private State<TStateEnum, TController> GetState(TStateEnum stateID)
+        {
+            foreach (State<TStateEnum, TController> state in _states)
             {
-                if(state.GetStateID() == stateID) return state;
+                if(state.GetStateID().Equals(stateID)) return state;
             }
             
             return null;
