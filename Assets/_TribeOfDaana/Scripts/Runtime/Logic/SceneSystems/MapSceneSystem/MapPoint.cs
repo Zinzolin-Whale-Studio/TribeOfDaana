@@ -1,29 +1,30 @@
 using System.Collections.Generic;
+using _TribeOfDaana.Scripts.Runtime.Logic.Clickable;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapSceneSystem
 {
-    public class MapPoint : MonoBehaviour
+    public class MapPoint : MonoBehaviour, IClickable
     {
-        [SerializeField] private Image _mapPointImage;
-        [SerializeField] private Button _mapPointButton;
+        [SerializeField] private SpriteRenderer _mapPointSprite;
         [SerializeField] private List<MapPoint> _neighborPoints = new List<MapPoint>();
 
-        public List<MapPoint> NeighborPoints => _neighborPoints;
-        
         public UnityAction<MapPoint> MapPointClicked;
 
-        public void RaiseClicked()
+        #region  IClickable Implementation
+        public void Click()
         {
+            Debug.Log("Clicked a MapPoint");
             MapPointClicked?.Invoke(this);
         }
-
+        #endregion
+        
         public void Select()
         {
-            _mapPointImage.color = Color.green;
-            _mapPointButton.interactable = false;
+            _mapPointSprite.color = Color.green;
             
             foreach (MapPoint mapPoint in _neighborPoints)
             {
@@ -33,8 +34,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapSceneSystem
 
         public void Unselect()
         {
-            _mapPointImage.color = Color.white;
-            _mapPointButton.interactable = false;
+            _mapPointSprite.color = Color.white;
             
             foreach (MapPoint mapPoint in _neighborPoints)
             {
@@ -44,14 +44,12 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapSceneSystem
 
         private void MarkAsNeighbor()
         {
-            _mapPointImage.color = Color.red;
-            _mapPointButton.interactable = true;
+            _mapPointSprite.color = Color.red;
         }
 
         private void UnmarkAsNeighbor()
         {
-            _mapPointImage.color = Color.white;
-            _mapPointButton.interactable = false;
+            _mapPointSprite.color = Color.white;
         }
         
         private void OnDrawGizmos()
@@ -69,5 +67,6 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapSceneSystem
             
             Gizmos.color = oldColor;
         }
+        
     }
 }
