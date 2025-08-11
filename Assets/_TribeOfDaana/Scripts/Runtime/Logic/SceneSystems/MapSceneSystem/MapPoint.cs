@@ -2,8 +2,7 @@ using System.Collections.Generic;
 using _TribeOfDaana.Scripts.Runtime.Logic.Clickable;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapSceneSystem
 {
@@ -67,6 +66,5 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapSceneSystem
             
             Gizmos.color = oldColor;
         }
-        
     }
 }

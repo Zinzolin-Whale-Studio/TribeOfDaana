@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3827182559691871402}
   - component: {fileID: 1652270429856988655}
-  - component: {fileID: -4230944064843290830}
   - component: {fileID: -9097642328737883152}
-  m_Layer: 6
+  - component: {fileID: -4230944064843290830}
+  m_Layer: 0
   m_Name: MapPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,20 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4230944064843290830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8594011058670936352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c2bf891242d5424ca381ca4eb2a3c97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mapPointSprite: {fileID: 1652270429856988655}
-  _neighborPoints: []
 --- !u!61 &-9097642328737883152
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +135,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-4230944064843290830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8594011058670936352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2bf891242d5424ca381ca4eb2a3c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mapPointSprite: {fileID: 1652270429856988655}
+  _neighborPoints: []
