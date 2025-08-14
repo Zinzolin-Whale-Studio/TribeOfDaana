@@ -1,4 +1,3 @@
-using _TribeOfDaana.Scripts.Runtime.Core.Diagnostic;
 using _TribeOfDaana.Scripts.Runtime.Core.Manager;
 using UnityEngine;
 
@@ -6,11 +5,21 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
 {
     public class MapSceneManager : SceneSystemManager<MapSceneManager>, ISceneSystemManager
     {
+        [SerializeField] private MapScenePlayerController m_playerController;
+        
         public override bool InitializeManager()
         {
-            MapSceneDebug.Log("Initialize MapScene Manager");
-            MapSceneDebug.LogWarning("Initialize MapScene Manager");
-            MapSceneDebug.LogError("Initialize MapScene Manager");
+            if (!m_playerController.InitializeController())
+            {
+                Debug.LogError("Failed to initialize : MapScenePlayerController");
+                return false;
+            }
+            
+            return true;
+        }
+
+        public override bool StartScene()
+        {
             return true;
         }
     }

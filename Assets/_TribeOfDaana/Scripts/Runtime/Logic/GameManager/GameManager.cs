@@ -75,6 +75,8 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
             }
 
             if(!foundSceneSystemManager.InitializeManager()) Debug.LogError("Game Manager failed to initialize Scene System Manager");;
+            
+            if(!foundSceneSystemManager.StartScene()) Debug.LogError("Error when starting the scene");;
         }
 
         private void SubscribeToSceneManagerEvents()
