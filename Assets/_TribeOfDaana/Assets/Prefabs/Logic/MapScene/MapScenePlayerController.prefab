@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8355403193780590136}
+  - component: {fileID: 5733554821410083886}
   m_Layer: 0
   m_Name: MapScenePlayerController
   m_TagString: Untagged
@@ -31,3 +32,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5733554821410083886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080833045084670039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dde90b96cd653479e8ce933378bde2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftClickInputAction: {fileID: -7824860522464580861, guid: 1db6eedd52c954a41ab33f92d972d4e5, type: 3}
+  _mousePosInputAction: {fileID: -6818319971915409655, guid: 1db6eedd52c954a41ab33f92d972d4e5, type: 3}
