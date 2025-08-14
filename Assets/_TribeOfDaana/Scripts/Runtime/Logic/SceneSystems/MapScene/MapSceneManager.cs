@@ -8,7 +8,9 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
     {
         public override bool InitializeManager()
         {
-            ToDDebug.Log("MapScene", "Initialize MapScene Manager");
+            MapSceneDebug.Log("Initialize MapScene Manager");
+            MapSceneDebug.LogWarning("Initialize MapScene Manager");
+            MapSceneDebug.LogError("Initialize MapScene Manager");
             return true;
         }
     }

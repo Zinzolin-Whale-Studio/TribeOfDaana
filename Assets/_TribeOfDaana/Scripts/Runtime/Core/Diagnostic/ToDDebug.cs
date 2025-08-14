@@ -4,18 +4,18 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.Diagnostic
 {
     public static class ToDDebug
     {
-        public static void Log(string tag, string message, string tagColor = null)
+        public static void Log(string message, string tag = "Tribe Of Daana", string tagColor = null)
         {
             
             Debug.Log(FormatMessage(tag, message, FormatTagColor(tagColor), "white"));
         }
         
-        public static void LogWarning(string tag, string message, string tagColor = null)
+        public static void LogWarning(string message, string tag = "Tribe Of Daana", string tagColor = null)
         {
             Debug.LogWarning(FormatMessage(tag, message, FormatTagColor(tagColor), "yellow"));
         }
         
-        public static void LogError(string tag, string message, string tagColor = null)
+        public static void LogError(string message, string tag = "Tribe Of Daana", string tagColor = null)
         {
             Debug.LogError(FormatMessage(tag, message, FormatTagColor(tagColor), "red"));
         }
@@ -27,7 +27,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.Diagnostic
         
         private static string FormatMessage(string tag, string message, string tagColor = null, string messageColor = null)
         {
-            string coloredTag = !string.IsNullOrEmpty(tagColor) ? $"<color={tagColor}>{tag}</color>" : $"<color=white>{tag}</color>";
+            string coloredTag = !string.IsNullOrEmpty(tagColor) ? $"<color={tagColor}><b>[{tag}]</b></color>" : $"<color=white><b>[{tag}]</b></color>";
             
             string coloredMessage = !string.IsNullOrEmpty(messageColor) ? $"<color={messageColor}>{message}</color>" : $"<color=white>{message}</color>";
             
@@ -36,7 +36,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.Diagnostic
         
         private static string FormatMessage(string tag, string message)
         {
-            return $"[<b>{tag}</b>] {message}";
+            return $"{tag} {message}";
         }
     }
 }
