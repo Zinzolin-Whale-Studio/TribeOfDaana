@@ -1,7 +1,6 @@
-using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.Clickable
+namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSubsystems.Clickable
 {
     public interface IClickable : IPointerDownHandler, IPointerUpHandler
 

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.GameSubsystems.SceneLoadingSubsystem
+namespace _TribeOfDaana.Scripts.Runtime.Logic.GameSubsystems.SceneLoading
 {
     public class LoadSceneComponent : MonoBehaviour
     {

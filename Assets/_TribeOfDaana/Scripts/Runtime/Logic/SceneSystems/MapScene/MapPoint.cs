@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using _TribeOfDaana.Scripts.Runtime.Logic.Clickable;
+using _TribeOfDaana.Scripts.Runtime.Logic.SceneSubsystems.Clickable;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapSceneSystem
+namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
 {
     public class MapPoint : MonoBehaviour, IClickable
     {
