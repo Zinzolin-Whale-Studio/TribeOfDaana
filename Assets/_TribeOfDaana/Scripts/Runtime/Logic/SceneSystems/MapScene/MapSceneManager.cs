@@ -11,7 +11,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
         {
             if (!m_playerController.InitializeController())
             {
-                Debug.LogError("Failed to initialize : MapScenePlayerController");
+                MapSceneDebug.LogError("Failed to initialize : MapScenePlayerController");
                 return false;
             }
             
@@ -20,6 +20,10 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
 
         public override bool StartScene()
         {
+            if (!m_playerController.StartController())
+            {
+                MapSceneDebug.LogError("Failed to start: MapScenePlayerController");
+            }            
             return true;
         }
     }

@@ -2,19 +2,9 @@ using UnityEngine.EventSystems;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSubsystems.Clickable
 {
-    public interface IClickable : IPointerDownHandler, IPointerUpHandler
+    public interface IClickable
 
     {
-        void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
-        {
-            //Will do some click down anim
-        }
-
-        void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
-        {
-            Click();
-        }
-
         public abstract void Click();
     }
 }
