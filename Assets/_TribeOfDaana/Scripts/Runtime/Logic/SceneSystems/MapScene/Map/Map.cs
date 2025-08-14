@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene;
 using UnityEngine;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
+namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map
 {
     public class Map : MonoBehaviour
     {
