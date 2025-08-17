@@ -11,14 +11,14 @@
                     "id": "9be1a265-bba9-4531-8cdd-a90f7743c40a",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold,Tap",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MousePos",
+                    "name": "MouseDelta",
                     "type": "Value",
                     "id": "af607cdb-3e45-4ae9-97c0-fad74b66d86e",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Delta",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -38,12 +38,12 @@
                 },
                 {
                     "name": "",
-                    "id": "fc7116d7-14a8-45a2-b98b-505f8a713086",
-                    "path": "<Mouse>/position",
+                    "id": "38868d88-22b8-4f99-9eb0-bf166b1d8876",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "MousePos",
+                    "action": "MouseDelta",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

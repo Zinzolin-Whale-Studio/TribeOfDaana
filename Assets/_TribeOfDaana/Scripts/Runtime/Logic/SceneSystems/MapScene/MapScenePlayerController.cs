@@ -1,14 +1,18 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
+using UnityEngine.Serialization;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
 {
     public class MapScenePlayerController : MonoBehaviour
     {
         #region Fields
-        [SerializeField] private InputActionReference _leftClickInputAction;
-        [SerializeField] private InputActionReference _mousePosInputAction;
+        [SerializeField] private InputActionReference m_leftClickInputAction;
+        [SerializeField] private InputActionReference m_mouseDeltaInputAction;
+
+        private bool m_isDragging;
         #endregion
 
         #region LifeCycle
@@ -19,48 +23,73 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
 
         public bool StartController()
         {
-            if (_leftClickInputAction == null || _mousePosInputAction == null)
+            if (m_leftClickInputAction == null || m_mouseDeltaInputAction == null)
             {
                 MapSceneDebug.LogError("An InputActionReference is null");
                 return false;
             }
 
-            _leftClickInputAction.action.started += OnLeftClickEvent;
-            _leftClickInputAction.action.performed += OnLeftClickEvent;
-            _leftClickInputAction.action.canceled += OnLeftClickEvent;
-            _leftClickInputAction.action.Enable();
+            m_leftClickInputAction.action.started += OnLeftClickEvent;
+            m_leftClickInputAction.action.canceled += OnLeftClickEvent;
+            m_leftClickInputAction.action.Enable();
             
-            _mousePosInputAction.action.started += OnMousePosEvent;
-            _mousePosInputAction.action.performed += OnMousePosEvent;
-            _mousePosInputAction.action.canceled += OnMousePosEvent;
-            _mousePosInputAction.action.Enable();
+            m_mouseDeltaInputAction.action.performed += OnMousePosEvent;
+            m_mouseDeltaInputAction.action.Enable();
             
             return true;
         }
         
         private void OnDestroy()
         {
-            _leftClickInputAction.action.started -= OnLeftClickEvent;
-            _leftClickInputAction.action.performed -= OnLeftClickEvent;
-            _leftClickInputAction.action.canceled -= OnLeftClickEvent;
-            _leftClickInputAction.action.Disable();
+            m_leftClickInputAction.action.started -= OnLeftClickEvent;
+            m_leftClickInputAction.action.canceled -= OnLeftClickEvent;
+            m_leftClickInputAction.action.Disable();
             
-            _mousePosInputAction.action.started -= OnMousePosEvent;
-            _mousePosInputAction.action.performed -= OnMousePosEvent;
-            _mousePosInputAction.action.canceled -= OnMousePosEvent;
-            _mousePosInputAction.action.Disable();
+            m_mouseDeltaInputAction.action.performed -= OnMousePosEvent;
+            m_mouseDeltaInputAction.action.Disable();
         }
         #endregion
 
 
         #region React To InputAction Events
         
-        private void OnLeftClickEvent(InputAction.CallbackContext obj)
+        private void OnLeftClickEvent(InputAction.CallbackContext ctx)
         {
+            if (ctx.interaction is TapInteraction)
+            {
+                if (ctx.started)
+                {
+                    MapSceneDebug.LogWarning("LeftClick Tap Started");
+                }
+
+                if (ctx.canceled)
+                {
+                    MapSceneDebug.LogWarning("LeftClick Tap Canceled");
+                }
+            }
+            else if (ctx.interaction is HoldInteraction)
+            {
+                if (ctx.started)
+                {
+                    m_isDragging = true;
+                    MapSceneDebug.LogWarning("LeftClick Hold Started");
+                }
+
+                if (ctx.canceled)
+                {
+                    m_isDragging = false;
+                    MapSceneDebug.LogWarning("LeftClick Hold Canceled");
+                }
+            }
         }
         
-        private void OnMousePosEvent(InputAction.CallbackContext obj)
+        private void OnMousePosEvent(InputAction.CallbackContext ctx)
         {
+            if (ctx.performed && m_isDragging)
+            {
+                Vector2 delta = ctx.ReadValue<Vector2>();
+                Camera.main.transform.position += (Vector3)(-delta) * Time.deltaTime;
+            }
         }
 
         #endregion

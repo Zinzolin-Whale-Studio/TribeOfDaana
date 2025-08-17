@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9dde90b96cd653479e8ce933378bde2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftClickInputAction: {fileID: -7824860522464580861, guid: 1db6eedd52c954a41ab33f92d972d4e5, type: 3}
-  _mousePosInputAction: {fileID: -6818319971915409655, guid: 1db6eedd52c954a41ab33f92d972d4e5, type: 3}
+  m_leftClickInputAction: {fileID: -7824860522464580861, guid: 1db6eedd52c954a41ab33f92d972d4e5, type: 3}
+  m_mouseDeltaInputAction: {fileID: -6818319971915409655, guid: 1db6eedd52c954a41ab33f92d972d4e5, type: 3}

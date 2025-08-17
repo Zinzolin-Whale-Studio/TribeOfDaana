@@ -24,6 +24,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
             {
                 MapSceneDebug.LogError("Failed to start: MapScenePlayerController");
             }            
+            
             return true;
         }
     }
