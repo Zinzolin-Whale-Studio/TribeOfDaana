@@ -46,3 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_leftClickInputAction: {fileID: -7824860522464580861, guid: 1db6eedd52c954a41ab33f92d972d4e5, type: 3}
   m_mouseDeltaInputAction: {fileID: -6818319971915409655, guid: 1db6eedd52c954a41ab33f92d972d4e5, type: 3}
+  m_clickableMask:
+    serializedVersion: 2
+    m_Bits: 64

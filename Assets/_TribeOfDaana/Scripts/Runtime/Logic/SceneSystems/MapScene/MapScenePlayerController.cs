@@ -1,4 +1,5 @@
 using System;
+using _TribeOfDaana.Scripts.Runtime.Logic.SceneSubsystems.Clickable;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
@@ -9,10 +10,15 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
     public class MapScenePlayerController : MonoBehaviour
     {
         #region Fields
+        // Inputs //
         [SerializeField] private InputActionReference m_leftClickInputAction;
         [SerializeField] private InputActionReference m_mouseDeltaInputAction;
 
+        // Drag //
         private bool m_isDragging;
+        
+        // LeftClick Tap //
+        [SerializeField] private LayerMask m_clickableMask;
         #endregion
 
         #region LifeCycle
@@ -62,6 +68,19 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
                     if (ctx.performed)
                     {
                         MapSceneDebug.LogWarning("LeftClick Tap Performed");
+                        Vector2 mouseWorldPos =
+                            Camera.main.ScreenToWorldPoint((Vector3)Mouse.current.position.ReadValue());
+
+                        RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero, 100f, m_clickableMask);
+
+                        if (hit.collider != null)
+                        {
+                            if (hit.collider.gameObject.TryGetComponent(out IClickable clickable))
+                            {
+                                clickable.Click();
+                            }
+                            
+                        }
                     }
 
                     break;
