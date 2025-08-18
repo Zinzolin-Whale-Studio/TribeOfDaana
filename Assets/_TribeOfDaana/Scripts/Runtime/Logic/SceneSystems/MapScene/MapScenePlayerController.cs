@@ -29,11 +29,11 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
                 return false;
             }
 
-            m_leftClickInputAction.action.started += OnLeftClickEvent;
+            m_leftClickInputAction.action.performed += OnLeftClickEvent;
             m_leftClickInputAction.action.canceled += OnLeftClickEvent;
             m_leftClickInputAction.action.Enable();
             
-            m_mouseDeltaInputAction.action.performed += OnMousePosEvent;
+            m_mouseDeltaInputAction.action.performed += OnMouseDeltaEvent;
             m_mouseDeltaInputAction.action.Enable();
             
             return true;
@@ -41,11 +41,11 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
         
         private void OnDestroy()
         {
-            m_leftClickInputAction.action.started -= OnLeftClickEvent;
+            m_leftClickInputAction.action.performed -= OnLeftClickEvent;
             m_leftClickInputAction.action.canceled -= OnLeftClickEvent;
             m_leftClickInputAction.action.Disable();
             
-            m_mouseDeltaInputAction.action.performed -= OnMousePosEvent;
+            m_mouseDeltaInputAction.action.performed -= OnMouseDeltaEvent;
             m_mouseDeltaInputAction.action.Disable();
         }
         #endregion
@@ -55,35 +55,37 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
         
         private void OnLeftClickEvent(InputAction.CallbackContext ctx)
         {
-            if (ctx.interaction is TapInteraction)
+            switch (ctx.interaction)
             {
-                if (ctx.started)
+                case TapInteraction:
                 {
-                    MapSceneDebug.LogWarning("LeftClick Tap Started");
-                }
+                    if (ctx.performed)
+                    {
+                        MapSceneDebug.LogWarning("LeftClick Tap Performed");
+                    }
 
-                if (ctx.canceled)
-                {
-                    MapSceneDebug.LogWarning("LeftClick Tap Canceled");
+                    break;
                 }
-            }
-            else if (ctx.interaction is HoldInteraction)
-            {
-                if (ctx.started)
+                case HoldInteraction:
                 {
-                    m_isDragging = true;
-                    MapSceneDebug.LogWarning("LeftClick Hold Started");
-                }
+                    if (ctx.performed)
+                    {
+                        m_isDragging = true;
+                        MapSceneDebug.LogWarning("LeftClick Hold Performed");
+                    }
 
-                if (ctx.canceled)
-                {
-                    m_isDragging = false;
-                    MapSceneDebug.LogWarning("LeftClick Hold Canceled");
+                    if (ctx.canceled)
+                    {
+                        m_isDragging = false;
+                        MapSceneDebug.LogWarning("LeftClick Hold Canceled");
+                    }
+
+                    break;
                 }
             }
         }
         
-        private void OnMousePosEvent(InputAction.CallbackContext ctx)
+        private void OnMouseDeltaEvent(InputAction.CallbackContext ctx)
         {
             if (ctx.performed && m_isDragging)
             {
