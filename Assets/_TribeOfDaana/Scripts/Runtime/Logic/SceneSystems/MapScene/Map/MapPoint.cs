@@ -10,6 +10,8 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map
         [SerializeField] private SpriteRenderer _mapPointSprite;
         [SerializeField] private List<MapPoint> _neighborPoints = new List<MapPoint>();
 
+        public List<MapPoint> NeighborPoints => _neighborPoints;
+        
         public UnityAction<MapPoint> MapPointClicked;
 
         #region  IClickable Implementation
