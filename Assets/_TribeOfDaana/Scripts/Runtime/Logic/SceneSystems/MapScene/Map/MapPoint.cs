@@ -17,7 +17,6 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map
         #region  IClickable Implementation
         public void Click()
         {
-            Debug.Log("Clicked a MapPoint");
             MapPointClicked?.Invoke(this);
         }
         #endregion

@@ -67,7 +67,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
                 {
                     if (ctx.performed)
                     {
-                        MapSceneDebug.LogWarning("LeftClick Tap Performed");
+                        //MapSceneDebug.LogWarning("LeftClick Tap Performed");
                         Vector2 mouseWorldPos =
                             Camera.main.ScreenToWorldPoint((Vector3)Mouse.current.position.ReadValue());
 
@@ -90,13 +90,13 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
                     if (ctx.performed)
                     {
                         m_isDragging = true;
-                        MapSceneDebug.LogWarning("LeftClick Hold Performed");
+                        //MapSceneDebug.LogWarning("LeftClick Hold Performed");
                     }
 
                     if (ctx.canceled)
                     {
                         m_isDragging = false;
-                        MapSceneDebug.LogWarning("LeftClick Hold Canceled");
+                        //MapSceneDebug.LogWarning("LeftClick Hold Canceled");
                     }
 
                     break;
