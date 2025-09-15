@@ -1,12 +1,13 @@
 using _TribeOfDaana.Scripts.Runtime.Core.Manager;
+using _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem;
 using UnityEngine;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
+namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem
 {
     public class MapSceneManager : SceneSystemManager<MapSceneManager>, ISceneSystemManager
     {
         [SerializeField] private MapScenePlayerController m_playerController;
-        [SerializeField] private Map.Map m_map;
+        [SerializeField] private Map m_map;
         
         public override bool InitializeManager()
         {

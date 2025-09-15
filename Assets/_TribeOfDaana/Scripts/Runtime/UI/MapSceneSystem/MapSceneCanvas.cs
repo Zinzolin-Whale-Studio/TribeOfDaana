@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _TribeOfDaana.Scripts.Runtime.UI.MapScene
+namespace _TribeOfDaana.Scripts.Runtime.UI.MapSceneSystem
 {
     public class MapSceneCanvas : MonoBehaviour
     {

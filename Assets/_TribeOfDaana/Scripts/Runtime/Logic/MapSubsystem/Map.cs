@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map.Point;
+using _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem.Point;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map
+namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem
 {
     
     public class Map : MonoBehaviour

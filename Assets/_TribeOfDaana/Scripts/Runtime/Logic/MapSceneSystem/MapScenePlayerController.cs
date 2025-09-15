@@ -1,11 +1,9 @@
-using System;
-using _TribeOfDaana.Scripts.Runtime.Logic.SceneSubsystems.Clickable;
+using _TribeOfDaana.Scripts.Runtime.Logic.ClickableSubsystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
-using UnityEngine.Serialization;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
+namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem
 {
     public class MapScenePlayerController : MonoBehaviour
     {

@@ -1,7 +1,6 @@
 using _TribeOfDaana.Scripts.Runtime.Core.Diagnostic;
-using UnityEngine;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene
+namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem
 {
     public static class MapSceneDebug
     {

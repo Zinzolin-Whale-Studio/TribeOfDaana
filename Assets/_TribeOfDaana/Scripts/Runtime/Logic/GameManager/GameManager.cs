@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _TribeOfDaana.Scripts.Runtime.Core.Manager;
-using _TribeOfDaana.Scripts.Runtime.Logic.GameSubsystems.SceneLoading;
+using _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSubsystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

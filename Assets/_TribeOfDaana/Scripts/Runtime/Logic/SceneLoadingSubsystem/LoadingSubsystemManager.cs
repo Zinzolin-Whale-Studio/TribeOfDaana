@@ -4,7 +4,7 @@ using _TribeOfDaana.Scripts.Runtime.Core.Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.GameSubsystems.SceneLoading
+namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSubsystem
 {
     public class LoadingSubsystemManager : Manager<LoadingSubsystemManager>, IGameSubsystemManager
     {

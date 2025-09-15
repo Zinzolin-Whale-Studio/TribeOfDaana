@@ -1,6 +1,6 @@
 using System;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map.Point
+namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem.Point
 {
     [Serializable]
     public struct MapPointInfo
