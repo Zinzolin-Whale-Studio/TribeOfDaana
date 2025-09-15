@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 1819cbd617293d847a4e4b48368c1938
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _Grasstexture: {fileID: 2800000, guid: eca68205e9764974eb6eba6ee6b0bf47, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
