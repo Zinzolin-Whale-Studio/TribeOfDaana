@@ -1,17 +1,31 @@
 using System.Collections.Generic;
+using _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map.Point;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map
 {
+    
     public class Map : MonoBehaviour
     {
         [SerializeField] private List<MapPoint> _mapPoints;
         [SerializeField] private MapPoint _startPoint;
-        private MapPoint _currentPoint;
 
+        private MapPoint _observedPoint; // Point that's currently selected by the player to see it's information 
+        private MapPoint _currentPoint; // Point on which the character is located
+
+        #region Actions
+
+        /// <summary>
+        /// Vector 3 is for the position of the point in world space
+        /// </summary>
+        public event UnityAction<Vector3,MapPointInfo> MapPointObserved;
+
+        #endregion
+        
         public bool InitializeMap()
         {
-            SetCurrentPoint(_startPoint);
+            _currentPoint = _startPoint;
             
             SubscribeToMapPointEvents();
 
@@ -28,19 +42,17 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map
         {
             foreach (MapPoint mapPoint in _mapPoints)
             {
-                mapPoint.MapPointClicked += OnMapPointClicked;
+                mapPoint.Clicked += OnMapPointClicked;
             }
         }
 
         private void OnMapPointClicked(MapPoint pointClicked)
         {
-            UpdateCurrentPoint(pointClicked);
-        }
+            if(pointClicked == null) return;
 
-        private void SetCurrentPoint(MapPoint mapPoint)
-        {
-            _currentPoint = mapPoint;
-            _currentPoint.Select();
+            _observedPoint = pointClicked;
+            
+            MapPointObserved?.Invoke(_observedPoint.transform.position, _observedPoint.PointInfo);
         }
         
         private void UpdateCurrentPoint(MapPoint mapPoint)
@@ -49,11 +61,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map
             //In the case of the Start of the Scene, we don't call update we just SetCurrentPoint directly, bypassing the logic of this function.
             if(mapPoint == null || _currentPoint == null) return;
 
-            if(!_currentPoint.NeighborPoints.Contains(mapPoint)) return;
-            
-            _currentPoint.Unselect();
-
-            SetCurrentPoint(mapPoint);
+            _currentPoint = mapPoint;
         }
     }
 }

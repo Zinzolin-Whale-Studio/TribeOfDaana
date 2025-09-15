@@ -1,9 +1,9 @@
-namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map
+namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map.Point
 {
     public enum MapPointState
     {
         None,
-        Unselect,
+        Unselected,
         NeighborToSelected,
         Selected
     }

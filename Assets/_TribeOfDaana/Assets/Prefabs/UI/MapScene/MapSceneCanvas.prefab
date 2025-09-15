@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7743444069584283104}
   - component: {fileID: 1006178158573407093}
   - component: {fileID: 1207021402981041743}
+  - component: {fileID: 5985236626181986775}
   m_Layer: 0
   m_Name: MapSceneCanvas
   m_TagString: Untagged
@@ -55,7 +56,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -101,3 +102,15 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5985236626181986775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4288684259641947296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d5015418538dc44995eb320c2d63bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

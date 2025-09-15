@@ -3,53 +3,30 @@ using _TribeOfDaana.Scripts.Runtime.Logic.SceneSubsystems.Clickable;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map
+namespace _TribeOfDaana.Scripts.Runtime.Logic.SceneSystems.MapScene.Map.Point
 {
     public class MapPoint : MonoBehaviour, IClickable
     {
-        [SerializeField] private SpriteRenderer _mapPointSprite;
+        #region  Fields
         [SerializeField] private List<MapPoint> _neighborPoints = new List<MapPoint>();
-
-        public List<MapPoint> NeighborPoints => _neighborPoints;
         
-        public UnityAction<MapPoint> MapPointClicked;
+        #endregion
+
+        #region Properties
+        public List<MapPoint> NeighborPoints => _neighborPoints;
+        [field:SerializeField] public MapPointInfo PointInfo { get; private set; }
+        #endregion
+
+        #region Actions
+        public event UnityAction<MapPoint> Clicked;
+        #endregion
 
         #region  IClickable Implementation
         public void Click()
         {
-            MapPointClicked?.Invoke(this);
+            Clicked?.Invoke(this);
         }
         #endregion
-        
-        public void Select()
-        {
-            _mapPointSprite.color = Color.green;
-            
-            foreach (MapPoint mapPoint in _neighborPoints)
-            {
-                mapPoint.MarkAsNeighbor();
-            }
-        }
-
-        public void Unselect()
-        {
-            _mapPointSprite.color = Color.white;
-            
-            foreach (MapPoint mapPoint in _neighborPoints)
-            {
-                mapPoint.UnmarkAsNeighbor();
-            }
-        }
-
-        private void MarkAsNeighbor()
-        {
-            _mapPointSprite.color = Color.red;
-        }
-
-        private void UnmarkAsNeighbor()
-        {
-            _mapPointSprite.color = Color.white;
-        }
         
         private void OnDrawGizmos()
         {
