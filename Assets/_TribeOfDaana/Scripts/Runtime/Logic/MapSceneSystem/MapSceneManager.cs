@@ -1,5 +1,6 @@
 using _TribeOfDaana.Scripts.Runtime.Core.Manager;
 using _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem;
+using _TribeOfDaana.Scripts.Runtime.UI.MapSceneSystem;
 using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem
@@ -8,6 +9,8 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem
     {
         [SerializeField] private MapScenePlayerController m_playerController;
         [SerializeField] private Map m_map;
+
+        [SerializeField] private MapSceneCanvas m_mapSceneCanvas;
         
         public override bool InitializeManager()
         {
@@ -20,6 +23,12 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem
             if (!m_map.InitializeMap())
             {
                 MapSceneDebug.LogError("Failed to initialize : Map");
+                return false;
+            }
+            
+            if (!m_mapSceneCanvas.InitMapSceneCanvas(m_map))
+            {
+                MapSceneDebug.LogError("Failed to initialize : MapSceneCanvas");
                 return false;
             }
             
@@ -37,6 +46,12 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem
             if (!m_map.StartMap())
             {
                 MapSceneDebug.LogError("Failed to start : Map");
+                return false;
+            }
+            
+            if (!m_mapSceneCanvas.StartMapSceneCanvas())
+            {
+                MapSceneDebug.LogError("Failed to start : MapSceneCanvas");
                 return false;
             }
             

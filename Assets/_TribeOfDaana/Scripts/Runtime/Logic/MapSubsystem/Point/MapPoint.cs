@@ -2,18 +2,18 @@ using System.Collections.Generic;
 using _TribeOfDaana.Scripts.Runtime.Logic.ClickableSubsystem;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem.Point
 {
     public class MapPoint : MonoBehaviour, IClickable
     {
         #region  Fields
-        [SerializeField] private List<MapPoint> _neighborPoints = new List<MapPoint>();
-        
+        [SerializeField] private List<MapPoint> m_neighborPoints = new List<MapPoint>();
         #endregion
 
         #region Properties
-        public List<MapPoint> NeighborPoints => _neighborPoints;
+        public List<MapPoint> NeighborPoints => m_neighborPoints;
         [field:SerializeField] public MapPointInfo PointInfo { get; private set; }
         #endregion
 
@@ -30,12 +30,12 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem.Point
         
         private void OnDrawGizmos()
         {
-            if(_neighborPoints.Count == 0) return;
+            if(m_neighborPoints.Count == 0) return;
             
             Color oldColor = Gizmos.color;
             Gizmos.color = Color.green;
             
-            foreach (MapPoint neighborPoint in _neighborPoints)
+            foreach (MapPoint neighborPoint in m_neighborPoints)
             {
                 if(neighborPoint == null) continue;
                 Gizmos.DrawLine(transform.position, neighborPoint.transform.position);
