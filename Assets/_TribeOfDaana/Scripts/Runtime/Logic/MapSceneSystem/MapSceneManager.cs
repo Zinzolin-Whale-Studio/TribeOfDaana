@@ -1,5 +1,5 @@
 using _TribeOfDaana.Scripts.Runtime.Core.Manager;
-using _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem;
+using _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem;
 using _TribeOfDaana.Scripts.Runtime.UI.MapSceneSystem;
 using UnityEngine;
 

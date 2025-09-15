@@ -1,4 +1,4 @@
-namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem.Point
+namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem.Point
 {
     public enum MapPointState
     {

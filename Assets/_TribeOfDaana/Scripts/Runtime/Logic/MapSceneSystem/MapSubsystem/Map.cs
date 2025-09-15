@@ -1,10 +1,9 @@
 using System.Collections.Generic;
-using _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem.Point;
+using _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem.Point;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem
+namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem
 {
     
     public class Map : MonoBehaviour
@@ -20,7 +19,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem
         /// <summary>
         /// Vector 3 is for the position of the point in world space
         /// </summary>
-        public event UnityAction<Vector3,MapPointInfo> MapPointObserved;
+        public event UnityAction<MapPointInfo> MapPointObserved;
 
         #endregion
         
@@ -52,8 +51,13 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem
             if(pointClicked == null) return;
 
             m_observedPoint = pointClicked;
+
+            MapPointInfo pointInfo = new MapPointInfo()
+            {
+                Position = m_observedPoint.transform.position
+            };
             
-            MapPointObserved?.Invoke(m_observedPoint.transform.position, m_observedPoint.PointInfo);
+            MapPointObserved?.Invoke(pointInfo);
         }
         
         private void UpdateCurrentPoint(MapPoint mapPoint)

@@ -2,9 +2,8 @@ using System.Collections.Generic;
 using _TribeOfDaana.Scripts.Runtime.Logic.ClickableSubsystem;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
-namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem.Point
+namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem.Point
 {
     public class MapPoint : MonoBehaviour, IClickable
     {
@@ -14,7 +13,6 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSubsystem.Point
 
         #region Properties
         public List<MapPoint> NeighborPoints => m_neighborPoints;
-        [field:SerializeField] public MapPointInfo PointInfo { get; private set; }
         #endregion
 
         #region Actions
