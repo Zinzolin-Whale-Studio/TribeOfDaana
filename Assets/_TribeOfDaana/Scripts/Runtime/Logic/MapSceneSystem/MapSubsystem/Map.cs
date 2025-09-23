@@ -51,22 +51,8 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem
             if(pointClicked == null) return;
 
             m_observedPoint = pointClicked;
-
-            MapPointInfo pointInfo = new MapPointInfo()
-            {
-                Position = m_observedPoint.transform.position
-            };
             
-            MapPointObserved?.Invoke(pointInfo);
-        }
-        
-        private void UpdateCurrentPoint(MapPoint mapPoint)
-        {
-            //Current point shouldn't be null when trying to update it because the map should always have a current point selected.
-            //In the case of the Start of the Scene, we don't call update we just SetCurrentPoint directly, bypassing the logic of this function.
-            if(mapPoint == null || m_currentPoint == null) return;
-
-            m_currentPoint = mapPoint;
+            MapPointObserved?.Invoke(m_observedPoint.MapPointInfo);
         }
     }
 }

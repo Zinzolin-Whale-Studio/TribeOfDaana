@@ -13,6 +13,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem.Point
 
         #region Properties
         public List<MapPoint> NeighborPoints => m_neighborPoints;
+        [field:SerializeField] public MapPointInfo MapPointInfo { get; private set; }
         #endregion
 
         #region Actions

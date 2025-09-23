@@ -2,12 +2,13 @@ using _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem;
 using _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem.Point;
 using _TribeOfDaana.Scripts.Runtime.UI.MapSceneSystem.MapSubsystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _TribeOfDaana.Scripts.Runtime.UI.MapSceneSystem
 {
     public class MapSceneCanvas : MonoBehaviour
     {
-        [SerializeField] private MapPointInfoWorldCanvas _mapPointInfoWorldCanvas;
+        [FormerlySerializedAs("_mapPointInfoWorldCanvas")] [SerializeField] private MapPointInfoUI mapPointInfoUI;
 
         #region GameLoop
         public bool InitMapSceneCanvas(Map map)
@@ -26,8 +27,8 @@ namespace _TribeOfDaana.Scripts.Runtime.UI.MapSceneSystem
 
         private void OnMapPointObserved(MapPointInfo mapPointInfo)
         {
-            _mapPointInfoWorldCanvas.gameObject.SetActive(true);
-            _mapPointInfoWorldCanvas.Show(mapPointInfo);
+            mapPointInfoUI.gameObject.SetActive(true);
+            mapPointInfoUI.UpdateInfo(mapPointInfo);
         }
     }
 }
