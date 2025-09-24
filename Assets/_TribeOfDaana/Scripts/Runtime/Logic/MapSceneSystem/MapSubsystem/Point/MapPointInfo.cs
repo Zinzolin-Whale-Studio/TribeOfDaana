@@ -7,5 +7,6 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem.Point
     public struct MapPointInfo
     {
         public string Name;
+        public string LevelKey;
     }
 }

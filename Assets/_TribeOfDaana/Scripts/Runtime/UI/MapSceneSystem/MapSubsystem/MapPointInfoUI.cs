@@ -12,7 +12,6 @@ namespace _TribeOfDaana.Scripts.Runtime.UI.MapSceneSystem.MapSubsystem
         public void UpdateInfo(MapPointInfo mapPointInfo)
         {
             _pointNameText.text = mapPointInfo.Name;
-            // transform.position = mapPointInfo.Position;
         }
     }
 }

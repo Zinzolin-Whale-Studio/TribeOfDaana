@@ -16,7 +16,7 @@ MonoBehaviour:
     _serializedList:
     - Key: Level One
       Value:
-        CampBackgroundPrefab: {fileID: 0}
+        CampBackgroundSprite: {fileID: 7641457690542762939, guid: 60731e1157ac713439081bc689a606e2, type: 3}
     - Key: Level Two
       Value:
-        CampBackgroundPrefab: {fileID: 0}
+        CampBackgroundSprite: {fileID: -1202607455795633003, guid: 489256d23b5d2f4498ea79b63311c1cb, type: 3}
