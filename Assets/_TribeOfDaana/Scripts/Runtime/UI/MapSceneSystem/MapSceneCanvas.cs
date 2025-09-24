@@ -2,7 +2,6 @@ using _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem;
 using _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem.Point;
 using _TribeOfDaana.Scripts.Runtime.UI.MapSceneSystem.MapSubsystem;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace _TribeOfDaana.Scripts.Runtime.UI.MapSceneSystem
