@@ -6,7 +6,6 @@ namespace _TribeOfDaana.Scripts.Runtime.Core.Diagnostic
     {
         public static void Log(string message, string tag = "Tribe Of Daana", string tagColor = null)
         {
-            
             Debug.Log(FormatMessage(tag, message, FormatTagColor(tagColor), "white"));
         }
         

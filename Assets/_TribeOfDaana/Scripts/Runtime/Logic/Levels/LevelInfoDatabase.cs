@@ -10,7 +10,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.Levels
     {
         [field: SerializeField] public SerializedDictionary<string, LevelInfo> LevelInfos { get; private set; } = new SerializedDictionary<string, LevelInfo>();
 
-        private string _levelToLoadKey;
+        private string _levelToLoadKey = string.Empty;
 
         public void SetLevelToLoadKey(string levelKey)
         {
@@ -21,7 +21,7 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.Levels
         
         public LevelInfo GetLevelToLoad()
         {
-            if (!LevelInfos.ContainsKey(_levelToLoadKey)) throw new Exception("This key level doesn't exist");
+            if (!LevelInfos.ContainsKey(_levelToLoadKey)) throw new Exception("The level key to load registered in the database doesn't exist in the dictionary keys of level infos dictionary.");
             
             return LevelInfos[_levelToLoadKey];
         }
