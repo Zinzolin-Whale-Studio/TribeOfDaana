@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem
 {
-    
     public class Map : MonoBehaviour
     {
         [SerializeField] private List<MapPoint> m_mapPoints;
