@@ -38,6 +38,11 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem
             return true;
         }
 
+        public string GetObservedMapPointInfo()
+        {
+            return m_observedPoint.MapPointInfo.LevelKey;
+        }
+
         private void SubscribeToMapPointEvents()
         {
             foreach (MapPoint mapPoint in m_mapPoints)

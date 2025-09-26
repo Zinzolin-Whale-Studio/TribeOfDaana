@@ -16,7 +16,10 @@ MonoBehaviour:
     _serializedList:
     - Key: Level One
       Value:
-        CampBackgroundSprite: {fileID: 7641457690542762939, guid: 60731e1157ac713439081bc689a606e2, type: 3}
+        CampBackgroundSprite: {fileID: 2058449229707075338, guid: a29937fd1bdc90449a535fea99c108d2, type: 3}
     - Key: Level Two
+      Value:
+        CampBackgroundSprite: {fileID: 7641457690542762939, guid: 60731e1157ac713439081bc689a606e2, type: 3}
+    - Key: Level Three
       Value:
         CampBackgroundSprite: {fileID: -1202607455795633003, guid: 489256d23b5d2f4498ea79b63311c1cb, type: 3}

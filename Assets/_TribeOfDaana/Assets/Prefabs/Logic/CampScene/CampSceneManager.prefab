@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1f1653f08ccde48b728ecae0514aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelInfoDatabase: {fileID: 11400000, guid: aee14c89d96cabf40ae1954d0e3faaec, type: 2}
-  _campBackground: {fileID: 0}
+  m_levelInfoDatabase: {fileID: 11400000, guid: aee14c89d96cabf40ae1954d0e3faaec, type: 2}
+  m_campBackground: {fileID: 0}
