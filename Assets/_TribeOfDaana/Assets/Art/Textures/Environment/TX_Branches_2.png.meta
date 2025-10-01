@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: a143e9eced4140345988ec5878a3690b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1463644210930799727
+    second: TX_Branches_2_0
+  - first:
+      213: 8054690785475170621
+    second: TX_Branches_2_1
+  - first:
+      213: -4483430938975595136
+    second: TX_Branches_2_2
+  - first:
+      213: 5228061476456807957
+    second: TX_Branches_2_3
+  - first:
+      213: 8455165945543561059
+    second: TX_Branches_2_4
+  - first:
+      213: -2380662574192608359
+    second: TX_Branches_2_5
+  - first:
+      213: 4724963665254251651
+    second: TX_Branches_2_6
+  - first:
+      213: 6408190568825702774
+    second: TX_Branches_2_7
+  - first:
+      213: 4463847274271859317
+    second: TX_Branches_2_8
+  - first:
+      213: -3660439910147245991
+    second: TX_Branches_2_9
+  - first:
+      213: -3121287491981740980
+    second: TX_Branches_2_10
+  - first:
+      213: -3914984933481573374
+    second: TX_Branches_2_11
+  - first:
+      213: 7729411602853332819
+    second: TX_Branches_2_12
+  - first:
+      213: 3803164199290333153
+    second: TX_Branches_2_13
+  - first:
+      213: 5395772493023419044
+    second: TX_Branches_2_14
+  - first:
+      213: -8807564660557252969
+    second: TX_Branches_2_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TX_Branches_2_0
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 441
+        width: 316
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19ba9e9485710bbe0800000000000000
+      internalID: -1463644210930799727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_1
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 665
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d311cd3089208cf60800000000000000
+      internalID: 8054690785475170621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_2
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 451
+        width: 289
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0851d53b057a7c1c0800000000000000
+      internalID: -4483430938975595136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_3
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 688
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ebc10a63ecd8840800000000000000
+      internalID: 5228061476456807957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_4
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 678
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f8a1d41a8c65570800000000000000
+      internalID: 8455165945543561059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_5
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 437
+        width: 297
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99bbe27800036fed0800000000000000
+      internalID: -2380662574192608359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_6
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 671
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c7b1c6b61729140800000000000000
+      internalID: 4724963665254251651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_7
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 633
+        width: 68
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6794ddbce577ee850800000000000000
+      internalID: 6408190568825702774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_8
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 535
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 572e19a0275c2fd30800000000000000
+      internalID: 4463847274271859317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_9
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 464
+        width: 276
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 958b20aab41833dc0800000000000000
+      internalID: -3660439910147245991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_10
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 491
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c44fe863095fea4d0800000000000000
+      internalID: -3121287491981740980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 328
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20413da02fd2ba9c0800000000000000
+      internalID: -3914984933481573374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_12
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 130
+        width: 73
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3570bde86e2644b60800000000000000
+      internalID: 7729411602853332819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 313
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e7ee2170bd87c430800000000000000
+      internalID: 3803164199290333153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_14
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 50
+        width: 254
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa1c7f8e72a1ea40800000000000000
+      internalID: 5395772493023419044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX_Branches_2_15
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 82
+        width: 283
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 796733f0b9e35c580800000000000000
+      internalID: -8807564660557252969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TX_Branches_2_0: -1463644210930799727
+      TX_Branches_2_1: 8054690785475170621
+      TX_Branches_2_10: -3121287491981740980
+      TX_Branches_2_11: -3914984933481573374
+      TX_Branches_2_12: 7729411602853332819
+      TX_Branches_2_13: 3803164199290333153
+      TX_Branches_2_14: 5395772493023419044
+      TX_Branches_2_15: -8807564660557252969
+      TX_Branches_2_2: -4483430938975595136
+      TX_Branches_2_3: 5228061476456807957
+      TX_Branches_2_4: 8455165945543561059
+      TX_Branches_2_5: -2380662574192608359
+      TX_Branches_2_6: 4724963665254251651
+      TX_Branches_2_7: 6408190568825702774
+      TX_Branches_2_8: 4463847274271859317
+      TX_Branches_2_9: -3660439910147245991
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

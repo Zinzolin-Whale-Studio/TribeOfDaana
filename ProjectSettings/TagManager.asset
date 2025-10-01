@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 2d
   - 3d
-  - 
+  - Post Processing
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Front Layer
     uniqueID: 3570773863
+    locked: 0
+  - name: UI
+    uniqueID: 1471850793
     locked: 0
   m_RenderingLayers:
   - Default

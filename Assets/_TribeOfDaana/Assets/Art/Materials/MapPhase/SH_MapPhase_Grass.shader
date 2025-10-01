@@ -226,7 +226,7 @@ Version=19801
 Node;AmplifyShaderEditor.TextureCoordinatesNode;29;-2128,480;Inherit;True;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.PannerNode;11;-1776,528;Inherit;False;3;0;FLOAT2;0,0;False;2;FLOAT2;0.4,-0.4;False;1;FLOAT;1;False;1;FLOAT2;0
 Node;AmplifyShaderEditor.RangedFloatNode;66;-1791.644,748.0573;Inherit;False;Property;_WindNoiseScale;Wind NoiseScale;5;0;Create;True;0;0;0;False;0;False;0.5;0;0;0;0;1;FLOAT;0
-Node;AmplifyShaderEditor.TexturePropertyNode;6;-1680,-368;Inherit;True;Property;_Grasstexture;Grass texture;0;0;Create;True;0;0;0;False;0;False;eca68205e9764974eb6eba6ee6b0bf47;None;False;white;Auto;Texture2D;-1;0;2;SAMPLER2D;0;SAMPLERSTATE;1
+Node;AmplifyShaderEditor.TexturePropertyNode;6;-1680,-368;Inherit;True;Property;_Grasstexture;Grass texture;0;0;Create;True;0;0;0;False;0;False;eca68205e9764974eb6eba6ee6b0bf47;eca68205e9764974eb6eba6ee6b0bf47;False;white;Auto;Texture2D;-1;0;2;SAMPLER2D;0;SAMPLERSTATE;1
 Node;AmplifyShaderEditor.VoronoiNode;3;-1536,464;Inherit;True;0;4;2.5;2;3;False;5;False;False;False;4;0;FLOAT2;0,0;False;1;FLOAT;3.16;False;2;FLOAT;0.35;False;3;FLOAT;0;False;3;FLOAT;0;FLOAT2;1;FLOAT2;2
 Node;AmplifyShaderEditor.TextureCoordinatesNode;5;-1408,-288;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.RangedFloatNode;62;-1104,624;Inherit;False;Property;_WindColorIntensity;Wind Color Intensity;4;0;Create;True;0;0;0;False;0;False;3;0;0;0;0;1;FLOAT;0
@@ -270,4 +270,4 @@ WireConnection;50;2;53;2
 WireConnection;50;3;1;4
 WireConnection;26;0;50;0
 ASEEND*/
-//CHKSM=526A7AAB9D03D97D2D442D1CCEEA2CB380718C04
+//CHKSM=F3FC028D612AE912A75A15A64B18FC98C0663810
