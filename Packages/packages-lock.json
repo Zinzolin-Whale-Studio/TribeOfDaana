@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.haiitocorp.littlefavorites": {
+      "version": "https://github.com/Haiito92/LittleFavorites.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "be3b416f18055180b2f421267461bfce2efa02cd"
+    },
+    "com.haiitocorp.littleinspector": {
+      "version": "https://github.com/Haiito92/LittleInspector.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "0276e74fbd2cce0a20c141310a81829ce3ae3a43"
+    },
     "com.unity.2d.animation": {
       "version": "10.1.4",
       "depth": 1,

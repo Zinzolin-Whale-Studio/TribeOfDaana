@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.haiitocorp.littlefavorites": "https://github.com/Haiito92/LittleFavorites.git",
+    "com.haiitocorp.littleinspector": "https://github.com/Haiito92/LittleInspector.git",
     "com.unity.addressables": "2.2.2",
     "com.unity.addressables.android": "1.0.4",
     "com.unity.cinemachine": "3.1.3",
