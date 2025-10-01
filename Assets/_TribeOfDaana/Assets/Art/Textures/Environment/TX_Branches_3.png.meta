@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TX_Branches_3_0: -1519131743608669003
+      TX_Branches_3_1: -6825603203340564761
+      TX_Branches_3_2: -501758862737035884
+      TX_Branches_3_3: 839665597938366789
+      TX_Branches_3_4: -3775609059805672621
+      TX_Branches_3_5: -1934691687362850959
+      TX_Branches_3_6: 3706469597474286979
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

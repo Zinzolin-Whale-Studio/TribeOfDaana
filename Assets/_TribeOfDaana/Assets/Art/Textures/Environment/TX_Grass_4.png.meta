@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TX_Grass_4_0: 177228415452143386
+      TX_Grass_4_1: -3284872062084098117
+      TX_Grass_4_2: 8828981485876873454
+      TX_Grass_4_3: -6529326165710863296
+      TX_Grass_4_4: 2918449766090511618
+      TX_Grass_4_5: 5102219524942841433
+      TX_Grass_4_6: -6099991878522557980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

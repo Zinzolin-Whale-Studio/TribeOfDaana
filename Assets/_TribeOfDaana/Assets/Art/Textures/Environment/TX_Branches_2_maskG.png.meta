@@ -522,7 +522,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TX_Branches_2_maskG_0: -8573433605914924367
+      TX_Branches_2_maskG_1: 8967637811300493761
+      TX_Branches_2_maskG_10: -8832898604559683214
+      TX_Branches_2_maskG_11: -1361397174376335740
+      TX_Branches_2_maskG_12: 3551808044733820012
+      TX_Branches_2_maskG_13: -8565486707944594567
+      TX_Branches_2_maskG_14: -4299187082369775749
+      TX_Branches_2_maskG_15: -8870472433550096555
+      TX_Branches_2_maskG_2: -439005224452819986
+      TX_Branches_2_maskG_3: 4177749252816402578
+      TX_Branches_2_maskG_4: 3006866310485157038
+      TX_Branches_2_maskG_5: -8262329434328489048
+      TX_Branches_2_maskG_6: -2877438351527316520
+      TX_Branches_2_maskG_7: 1511322975538539969
+      TX_Branches_2_maskG_8: -2874844703715412915
+      TX_Branches_2_maskG_9: -1123019258298540048
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
