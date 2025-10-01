@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using _TribeOfDaana.Scripts.Runtime.Core.Manager;
-using _TribeOfDaana.Scripts.Runtime.Logic.GameSubsystems.SceneLoadingSubsystem;
+using _TribeOfDaana.Scripts.Runtime.Logic.SceneLoadingSubsystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
 {
@@ -76,6 +75,8 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.GameManager
             }
 
             if(!foundSceneSystemManager.InitializeManager()) Debug.LogError("Game Manager failed to initialize Scene System Manager");;
+            
+            if(!foundSceneSystemManager.StartScene()) Debug.LogError("Error when starting the scene");;
         }
 
         private void SubscribeToSceneManagerEvents()

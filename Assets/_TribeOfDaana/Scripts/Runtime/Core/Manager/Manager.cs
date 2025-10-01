@@ -1,6 +1,4 @@
-using System;
 using _TribeOfDaana.Scripts.Runtime.Core.Singleton;
-using UnityEngine;
 
 namespace _TribeOfDaana.Scripts.Runtime.Core.Manager
 {
