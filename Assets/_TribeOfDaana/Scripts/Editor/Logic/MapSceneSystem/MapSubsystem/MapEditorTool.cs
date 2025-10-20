@@ -1,3 +1,4 @@
+using _TribeOfDaana.Scripts.Editor.Core.Utilities;
 using _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem;
 using UnityEditor;
 using UnityEditor.EditorTools;
@@ -50,28 +51,26 @@ namespace _TribeOfDaana.Scripts.Editor.Logic.MapSceneSystem.MapSubsystem
             {
                 case EventType.KeyDown:
 
-                    if (evt.keyCode == KeyCode.C)
+                    switch (evt.keyCode)
                     {
-                        
-                        Debug.Log("[Map Editor Tool] : Pressed C");
-
-                        GameObject mapPointGO =
-                            PrefabUtility.InstantiatePrefab(m_mapPointPrefab, m_targetMap.transform) as GameObject;
-                        
-                        if (mapPointGO == null)
-                        {
-                            Debug.LogWarning("[Map Editor Tool] : Failed to create map point");
+                        case KeyCode.C:
+                            GameObject mapPointGO =
+                                PrefabUtility.InstantiatePrefab(m_mapPointPrefab, m_targetMap.transform) as GameObject;
+                            
+                            if (mapPointGO == null)
+                            {
+                                Debug.LogWarning("[Map Editor Tool] : Failed to create map point");
+                                break;
+                            }
+                            
+                            mapPointGO.transform.position = EditorToolUtils.EventPositionToWorldPosition(evt.mousePosition, sceneView);
+                            Undo.RegisterCreatedObjectUndo(mapPointGO, "Create Map Point");
                             evt.Use();
                             break;
-                        }
+                        
+                        case KeyCode.E:
+                            break;
                     }
-                    
-                    if (evt.keyCode == KeyCode.E)
-                    {
-                        Debug.Log("[Map Editor Tool] : Pressed E");
-                    }
-                    
-                    evt.Use();
                     break;
             }
         }
