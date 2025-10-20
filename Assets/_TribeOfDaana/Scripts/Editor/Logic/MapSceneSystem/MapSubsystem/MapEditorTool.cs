@@ -1,5 +1,6 @@
 using _TribeOfDaana.Scripts.Editor.Core.Utilities;
 using _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem;
+using _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem.Point;
 using UnityEditor;
 using UnityEditor.EditorTools;
 using UnityEngine;
@@ -69,6 +70,16 @@ namespace _TribeOfDaana.Scripts.Editor.Logic.MapSceneSystem.MapSubsystem
                             break;
                         
                         case KeyCode.E:
+
+                            Ray worldRay = HandleUtility.GUIPointToWorldRay(evt.mousePosition);
+                            RaycastHit2D hit = Physics2D.Raycast(worldRay.origin, worldRay.direction, 100.0f);
+
+                            if (hit.collider != null && hit.collider.gameObject.TryGetComponent(out MapPoint mapPoint))
+                            {
+                                Undo.DestroyObjectImmediate(mapPoint.gameObject);
+                            }
+                            
+                            evt.Use();
                             break;
                     }
                     break;
