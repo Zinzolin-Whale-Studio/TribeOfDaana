@@ -66,7 +66,8 @@ namespace _TribeOfDaana.Scripts.Editor.Logic.MapSceneSystem.MapSubsystem
                             evt.Use();
                             break;
                         
-                        case KeyCode.R:
+                        case KeyCode.Z:
+                            // evt.Use();
                             break;
                     }
                     break;
@@ -85,9 +86,12 @@ namespace _TribeOfDaana.Scripts.Editor.Logic.MapSceneSystem.MapSubsystem
                 return false;
             }
             
+            Undo.RegisterCompleteObjectUndo(m_targetMap, "Create Map Point");
             mapPointGO.transform.position = EditorToolUtils.EventPositionToWorldPosition(eventMousePosition, sceneView);
             Undo.RegisterCreatedObjectUndo(mapPointGO, "Create Map Point");
-            
+            m_targetMap.Editor_AddPoint(mapPoint);
+            EditorUtility.SetDirty(m_targetMap);
+
             return true;
         }
 
@@ -98,7 +102,12 @@ namespace _TribeOfDaana.Scripts.Editor.Logic.MapSceneSystem.MapSubsystem
 
             if (hit.collider != null && hit.collider.gameObject.TryGetComponent(out MapPoint mapPoint))
             {
+                Undo.RegisterCompleteObjectUndo(m_targetMap, "Destroy Map Point");
+                m_targetMap.Editor_RemovePoint(mapPoint);
+                EditorUtility.SetDirty(m_targetMap);
+                
                 Undo.DestroyObjectImmediate(mapPoint.gameObject);
+                
                 return true;
             }
 
