@@ -1,10 +1,13 @@
+using System;
 using System.Collections.Generic;
 using _TribeOfDaana.Scripts.Runtime.Logic.ClickableSubsystem;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem.Point
 {
+    [ExecuteInEditMode]
     public class MapPoint : MonoBehaviour, IClickable
     {
         #region  Fields
@@ -18,6 +21,10 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem.Point
 
         #region Actions
         public event UnityAction<MapPoint> Clicked;
+        
+        // #if UNITY_EDITOR
+        // public event UnityAction Editor_Destroyed; 
+        // #endif
         #endregion
 
         #region  IClickable Implementation
@@ -26,7 +33,17 @@ namespace _TribeOfDaana.Scripts.Runtime.Logic.MapSceneSystem.MapSubsystem.Point
             Clicked?.Invoke(this);
         }
         #endregion
-        
+
+        // private void OnDestroy()
+        // {
+        //     #if UNITY_EDITOR
+        //     if (!EditorApplication.isPlayingOrWillChangePlaymode)
+        //     {
+        //         Editor_Destroyed?.Invoke();
+        //     }
+        //     #endif
+        // }
+
         private void OnDrawGizmos()
         {
             if(m_neighborPoints.Count == 0) return;

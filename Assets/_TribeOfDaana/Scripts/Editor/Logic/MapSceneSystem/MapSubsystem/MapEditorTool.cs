@@ -55,35 +55,54 @@ namespace _TribeOfDaana.Scripts.Editor.Logic.MapSceneSystem.MapSubsystem
                     switch (evt.keyCode)
                     {
                         case KeyCode.C:
-                            GameObject mapPointGO =
-                                PrefabUtility.InstantiatePrefab(m_mapPointPrefab, m_targetMap.transform) as GameObject;
+                            CreateMapPoint(evt.mousePosition, sceneView);
                             
-                            if (mapPointGO == null)
-                            {
-                                Debug.LogWarning("[Map Editor Tool] : Failed to create map point");
-                                break;
-                            }
-                            
-                            mapPointGO.transform.position = EditorToolUtils.EventPositionToWorldPosition(evt.mousePosition, sceneView);
-                            Undo.RegisterCreatedObjectUndo(mapPointGO, "Create Map Point");
                             evt.Use();
                             break;
                         
                         case KeyCode.E:
-
-                            Ray worldRay = HandleUtility.GUIPointToWorldRay(evt.mousePosition);
-                            RaycastHit2D hit = Physics2D.Raycast(worldRay.origin, worldRay.direction, 100.0f);
-
-                            if (hit.collider != null && hit.collider.gameObject.TryGetComponent(out MapPoint mapPoint))
-                            {
-                                Undo.DestroyObjectImmediate(mapPoint.gameObject);
-                            }
+                           DestroyMapPoint(evt.mousePosition);
                             
                             evt.Use();
+                            break;
+                        
+                        case KeyCode.R:
                             break;
                     }
                     break;
             }
+        }
+
+        bool CreateMapPoint(Vector2 eventMousePosition, SceneView sceneView)
+        {
+            GameObject mapPointGO =
+                PrefabUtility.InstantiatePrefab(m_mapPointPrefab, m_targetMap.transform) as GameObject;
+                            
+            if (mapPointGO == null || !mapPointGO.TryGetComponent(out MapPoint mapPoint))
+            {
+                Debug.LogWarning("[Map Editor Tool] : Failed to create map point");
+                DestroyImmediate(mapPointGO);
+                return false;
+            }
+            
+            mapPointGO.transform.position = EditorToolUtils.EventPositionToWorldPosition(eventMousePosition, sceneView);
+            Undo.RegisterCreatedObjectUndo(mapPointGO, "Create Map Point");
+            
+            return true;
+        }
+
+        bool DestroyMapPoint(Vector2 eventMousePosition)
+        {
+            Ray worldRay = HandleUtility.GUIPointToWorldRay(eventMousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(worldRay.origin, worldRay.direction, 100.0f);
+
+            if (hit.collider != null && hit.collider.gameObject.TryGetComponent(out MapPoint mapPoint))
+            {
+                Undo.DestroyObjectImmediate(mapPoint.gameObject);
+                return true;
+            }
+
+            return false;
         }
     }
 }
